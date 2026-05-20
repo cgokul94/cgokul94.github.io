@@ -6,86 +6,330 @@
   <meta name="description" content="Gokul Chandrasekaran — Research and industry portfolio in thermal management, two-phase heat transfer, atmospheric water harvesting, porous media, biomedical thermal systems, and space thermal systems.">
   <title>Gokul Chandrasekaran</title>
   <style>
+    :root {
+      --bg: #eef2f7;
+      --panel: rgba(255, 255, 255, 0.86);
+      --panel-strong: #ffffff;
+      --text: #17212b;
+      --muted: #5f6b78;
+      --line: rgba(23, 33, 43, 0.10);
+      --accent: #173a63;
+      --accent-soft: rgba(23, 58, 99, 0.08);
+      --shadow: 0 18px 50px rgba(23, 33, 43, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     html {
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px;
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(23, 58, 99, 0.08), transparent 32%),
+        radial-gradient(circle at top right, rgba(57, 110, 164, 0.08), transparent 28%),
+        var(--bg);
       line-height: 1.7;
     }
 
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 22px 56px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(238, 242, 247, 0.72);
+      border-bottom: 1px solid rgba(23, 33, 43, 0.06);
+      margin: -28px -22px 22px;
+      padding: 14px 22px;
+    }
+
     .nav {
-      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
       font-size: 14px;
-      line-height: 2;
+      color: var(--muted);
     }
 
     .nav a {
-      margin-right: 10px;
-      white-space: nowrap;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
     }
 
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0px 2px 10px rgba(0,0,0,0.08);
+    .nav a:hover {
+      color: var(--accent);
+      background: rgba(23, 58, 99, 0.08);
+    }
+
+    .shell {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 38px 34px 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.78));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      margin-top: 40px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
-    }
-
-    h3 {
-      margin-top: 24px;
-      margin-bottom: 8px;
+      margin: 0;
+      font-size: clamp(2.3rem, 4vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
     }
 
     .subtitle {
-      color: #555;
-      font-size: 18px;
-      margin-bottom: 30px;
+      margin: 14px 0 0;
+      max-width: 920px;
+      font-size: clamp(1rem, 1.55vw, 1.18rem);
+      color: var(--muted);
     }
 
-    .highlight-box {
-      background: #f0f4f8;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 25px;
-      margin-bottom: 25px;
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
     }
 
-    .grid {
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid rgba(23, 33, 43, 0.12);
+      color: var(--text);
+      background: rgba(255,255,255,0.9);
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(23, 58, 99, 0.25);
+      box-shadow: 0 8px 24px rgba(23, 33, 43, 0.08);
+      text-decoration: none;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #18222d;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .content {
+      padding: 22px 34px 36px;
+    }
+
+    .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-      margin-bottom: 24px;
+      gap: 14px;
+      margin: 8px 0 24px;
     }
 
-    ul {
-      padding-left: 20px;
+    .stat {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px 18px 16px;
     }
 
-    li {
+    .stat .label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .stat .value {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.06rem;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 14px;
+      align-items: start;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px 20px;
+    }
+
+    .timeline-item .time {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(23, 58, 99, 0.08);
+      border-radius: 999px;
+      display: inline-flex;
+      padding: 7px 10px;
       margin-bottom: 10px;
     }
 
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .timeline-item p,
+    .timeline-item ul {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .timeline-item ul {
+      margin-top: 10px;
+      padding-left: 18px;
+    }
+
+    .timeline-item li {
+      margin-bottom: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    ul.clean li {
+      margin-bottom: 8px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .keywords {
+      margin-top: 22px;
+      font-size: 12px;
+      color: #6c7680;
+      letter-spacing: 0.02em;
+    }
+
     a {
-      color: #0056b3;
+      color: var(--accent);
       text-decoration: none;
     }
 
@@ -93,405 +337,466 @@
       text-decoration: underline;
     }
 
-    .badge {
-      display: inline-block;
-      background: #222;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
+    @media (max-width: 720px) {
+      .page {
+        padding: 16px 12px 34px;
+      }
 
-    .keywords {
-      margin-top: 28px;
-      font-size: 13px;
-      color: #666;
-      border-top: 1px solid #eee;
-      padding-top: 16px;
-    }
+      .topbar {
+        margin: -16px -12px 16px;
+        padding: 12px 12px;
+      }
 
-    .smallcaps {
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 6px;
+      .hero,
+      .content {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="nav">
-    <a href="#domains">Domains</a> |
-    <a href="#space">Space Systems</a> |
-    <a href="#projects">Projects</a> |
-    <a href="#impact">Impact</a> |
-    <a href="#methods">Methods</a> |
-    <a href="#federal">Federal Programs</a> |
-    <a href="#translation">Translation</a> |
-    <a href="#publications">Publications</a> |
-    <a href="#talks">Talks</a> |
-    <a href="#awards">Awards</a> |
-    <a href="#service">Service</a> |
-    <a href="#education">Education</a> |
-    <a href="#media">Media</a> |
-    <a href="#collaboration">Collaboration</a> |
-    <a href="#contact">Contact</a>
-  </div>
-
-  <div class="container">
-    <h1>Gokul Chandrasekaran</h1>
-
-    <p class="subtitle">
-      Research Engineer in Thermal-Fluid Systems, Biomedical Diagnostics, Space Thermal Systems, and Energy Technologies
-    </p>
-
-    <div>
-      <span class="badge">Thermal Management</span>
-      <span class="badge">Two-Phase Heat Transfer</span>
-      <span class="badge">Atmospheric Water Harvesting</span>
-      <span class="badge">Porous Media Transport</span>
-      <span class="badge">Biomedical Thermal Systems</span>
-      <span class="badge">Point-of-Care Diagnostics</span>
-      <span class="badge">Space Thermal Systems</span>
-      <span class="badge">Energy &amp; Thermal Systems</span>
-    </div>
-
-    <div class="highlight-box">
-      <strong>Professional Summary</strong>
-      <p>
-        Mechanical engineer specializing in thermal-fluid systems with 7+ years of experience in two-phase cooling,
-        porous media, energy systems, biomedical diagnostics, and aerospace thermal technologies. Experience spans
-        federally funded research, industry R&amp;D, and translational engineering, with contributions resulting in
-        peer-reviewed publications and a U.S. provisional patent.
-      </p>
-    </div>
-
-    <div class="grid">
-      <div class="highlight-box">
-        <strong>Experience</strong>
-        <p>7+ years in thermal-fluid systems research and industry R&amp;D</p>
-      </div>
-      <div class="highlight-box">
-        <strong>Programs</strong>
-        <p>DARPA, NSF, NASA, biomedical technology, and industry collaborations</p>
-      </div>
-      <div class="highlight-box">
-        <strong>Research Output</strong>
-        <p>Publications, conference presentations, and a U.S. provisional patent</p>
-      </div>
-      <div class="highlight-box">
-        <strong>Professional Service</strong>
-        <p>Reviewer for ASME and IEEE journals and conferences</p>
+  <div class="page">
+    <div class="topbar">
+      <div class="nav">
+        <a href="#domains">Domains</a>
+        <a href="#space">Space Systems</a>
+        <a href="#projects">Projects</a>
+        <a href="#impact">Impact</a>
+        <a href="#methods">Methods</a>
+        <a href="#federal">Federal Programs</a>
+        <a href="#translation">Translation</a>
+        <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#awards">Awards</a>
+        <a href="#service">Service</a>
+        <a href="#education">Education</a>
+        <a href="#media">Media</a>
+        <a href="#collaboration">Collaboration</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
 
-    <div class="highlight-box">
-      <h2>Professional Highlights</h2>
-      <ul>
-        <li>7+ years in thermal-fluid systems research and industry R&amp;D</li>
-        <li>Contributions across DARPA, NSF, NASA, and biomedical technology programs</li>
-        <li>U.S. provisional patent in atmospheric water harvesting technologies</li>
-        <li>Peer-reviewed publications and international conference presentations</li>
-        <li>Reviewer for ASME and IEEE journals and conferences</li>
-        <li>Experience spanning thermal systems, diagnostics, porous media, aerospace, and energy technologies</li>
-      </ul>
+    <div class="shell">
+      <header class="hero">
+        <div class="eyebrow">Research Engineer Portfolio</div>
+        <h1>Gokul Chandrasekaran</h1>
+        <p class="subtitle">
+          Research Engineer in Thermal-Fluid Systems, Biomedical Diagnostics, Space Thermal Systems, and Energy Technologies.
+        </p>
 
-      <h2>Core Competencies</h2>
-      <ul>
-        <li>Thermal Modeling &amp; Simulation</li>
-        <li>COMSOL Multiphysics</li>
-        <li>ANSYS Fluent</li>
-        <li>MATLAB</li>
-        <li>Experimental Thermal Systems</li>
-        <li>LabVIEW Automation</li>
-        <li>Two-Phase Cooling</li>
-        <li>Heat Pipes &amp; Wick Structures</li>
-        <li>Porous Media Transport</li>
-        <li>Atmospheric Water Harvesting</li>
-        <li>Point-of-Care Diagnostic Systems</li>
-        <li>Thermal Diagnostics &amp; Instrumentation</li>
-        <li>Additive Manufacturing</li>
-        <li>Thermal System Optimization</li>
-      </ul>
+        <div class="hero-links">
+          <a class="button" href="#contact">Contact</a>
+          <a class="button" href="https://linkedin.com/in/gokul-chandrasekaran" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button" href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="button" href="Resume_GC.pdf" target="_blank" rel="noreferrer">Download CV</a>
+        </div>
 
-      <h2>Research Philosophy</h2>
-      <p>
-        My work focuses on translating thermal-fluid science into deployable engineering systems through integrated
-        computational, experimental, and systems-level approaches. I am particularly interested in technologies that
-        bridge fundamental transport phenomena with real-world applications in energy, cooling, diagnostics,
-        aerospace, and environmental systems.
-      </p>
+        <div class="badges">
+          <span class="badge">Thermal Management</span>
+          <span class="badge">Two-Phase Heat Transfer</span>
+          <span class="badge">Atmospheric Water Harvesting</span>
+          <span class="badge">Porous Media Transport</span>
+          <span class="badge">Biomedical Thermal Systems</span>
+          <span class="badge">Point-of-Care Diagnostics</span>
+          <span class="badge">Space Thermal Systems</span>
+          <span class="badge">Energy &amp; Thermal Systems</span>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="stats">
+          <div class="stat">
+            <span class="label">Experience</span>
+            <p class="value">7+ years in thermal-fluid systems research and industry R&amp;D</p>
+          </div>
+          <div class="stat">
+            <span class="label">Programs</span>
+            <p class="value">DARPA, NSF, NASA, biomedical technology, and industry collaborations</p>
+          </div>
+          <div class="stat">
+            <span class="label">Output</span>
+            <p class="value">Publications, conference talks, and a U.S. provisional patent</p>
+          </div>
+          <div class="stat">
+            <span class="label">Service</span>
+            <p class="value">Reviewer for ASME and IEEE journals and conferences</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Professional Summary</h2>
+          <div class="card">
+            <p>
+              Mechanical engineer specializing in thermal-fluid systems with 7+ years of experience in two-phase cooling,
+              porous media, energy systems, biomedical diagnostics, and aerospace thermal technologies. Experience spans
+              federally funded research, industry R&amp;D, and translational engineering, with contributions resulting in
+              peer-reviewed publications and a U.S. provisional patent.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Professional Highlights</h2>
+          <div class="panel-grid">
+            <div class="card">
+              <h3>Experience</h3>
+              <p>7+ years in thermal-fluid systems research and industry R&amp;D</p>
+            </div>
+            <div class="card">
+              <h3>Programs</h3>
+              <p>DARPA, NSF, NASA, biomedical technology, and industry collaborations</p>
+            </div>
+            <div class="card">
+              <h3>Research Output</h3>
+              <p>Publications, conference presentations, and a U.S. provisional patent</p>
+            </div>
+            <div class="card">
+              <h3>Professional Service</h3>
+              <p>Reviewer for ASME and IEEE journals and conferences</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Core Competencies</h2>
+          <div class="card">
+            <div class="two-col">
+              <ul class="clean">
+                <li>Thermal Modeling &amp; Simulation</li>
+                <li>COMSOL Multiphysics</li>
+                <li>ANSYS Fluent</li>
+                <li>MATLAB</li>
+                <li>Experimental Thermal Systems</li>
+                <li>LabVIEW Automation</li>
+                <li>Two-Phase Cooling</li>
+              </ul>
+              <ul class="clean">
+                <li>Heat Pipes &amp; Wick Structures</li>
+                <li>Porous Media Transport</li>
+                <li>Atmospheric Water Harvesting</li>
+                <li>Point-of-Care Diagnostic Systems</li>
+                <li>Thermal Diagnostics &amp; Instrumentation</li>
+                <li>Additive Manufacturing</li>
+                <li>Thermal System Optimization</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Research Philosophy</h2>
+          <div class="card">
+            <p>
+              My work focuses on translating thermal-fluid science into deployable engineering systems through integrated
+              computational, experimental, and systems-level approaches. I am particularly interested in technologies that
+              bridge fundamental transport phenomena with real-world applications in energy, cooling, diagnostics,
+              aerospace, and environmental systems.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Professional Timeline</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div>
+                <span class="time">2026–Present</span>
+              </div>
+              <div>
+                <h3>Lead, Thermal Engineering — Global Cooling Technology Group, LLC</h3>
+                <p>Industry R&amp;D leadership in closed-loop pulsating heat pipe systems and thermal performance testing.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <span class="time">2026–Present</span>
+              </div>
+              <div>
+                <h3>Postdoctoral Research Scholar — Arizona State University</h3>
+                <p>Experimental research on coated desiccant systems for atmospheric water harvesting.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <span class="time">2018–2025</span>
+              </div>
+              <div>
+                <h3>Graduate Research Assistant (PhD) — Arizona State University</h3>
+                <p>Experimental and modeling work in atmospheric water harvesting, two-phase cooling, and porous media systems.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <span class="time">2023</span>
+              </div>
+              <div>
+                <h3>Thermal Modeling Engineering Intern — Global Health Labs</h3>
+                <p>COMSOL-based thermal modeling and experimental validation for biomedical diagnostic systems.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="domains">
+          <h2>Research &amp; Engineering Domains</h2>
+          <div class="panel-grid">
+            <div class="card">
+              <h3>Thermal Management</h3>
+              <p>High-power electronics cooling, heat pipes, CLPHP systems, and thermal diagnostics.</p>
+            </div>
+            <div class="card">
+              <h3>Two-Phase Heat Transfer</h3>
+              <p>Pulsating heat pipe systems, boiling and condensation transport, and capillary-driven thermal systems.</p>
+            </div>
+            <div class="card" id="space">
+              <h3>Space Thermal Systems &amp; Aerospace Applications</h3>
+              <p>Additively manufactured heat pipe radiators and high-temperature thermal transport for NEP and FSP systems.</p>
+            </div>
+            <div class="card">
+              <h3>Atmospheric Water Harvesting</h3>
+              <p>Desiccant-based systems, ultrasound-assisted desorption, and water-energy system integration.</p>
+            </div>
+            <div class="card">
+              <h3>Porous Media Transport</h3>
+              <p>Permeability characterization, porous transport phenomena, and capillary transport.</p>
+            </div>
+            <div class="card">
+              <h3>Thermal Modeling &amp; Simulation</h3>
+              <p>COMSOL, ANSYS Fluent, MATLAB workflows, and experimental-simulation integration.</p>
+            </div>
+            <div class="card">
+              <h3>Biomedical Thermal Systems &amp; Diagnostics</h3>
+              <p>Thermal optimization and validation for point-of-care molecular diagnostic systems.</p>
+            </div>
+            <div class="card">
+              <h3>Experimental Systems Engineering</h3>
+              <p>LabVIEW automation, instrumentation, and thermal testing under elevated temperature and vibration.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <h2>Programs &amp; Projects</h2>
+          <div class="stack">
+            <div class="card">
+              <h3>NASA Early Stage Innovations (ESI) — Space Thermal Systems</h3>
+              <p>
+                Research contributions supporting additively manufactured high-temperature heat pipe radiators for future
+                spaceflight thermal management applications, including nuclear electric propulsion (NEP) and fission surface
+                power (FSP) systems.
+              </p>
+              <ul class="clean">
+                <li>Contributed to thermal transport and wick structure characterization for additively manufactured heat pipe systems</li>
+                <li>Supported experimental validation activities for high-temperature radiator technologies</li>
+                <li>Participated in NASA Glenn Research Center Early Stage Innovation research seminar and technical collaboration activities</li>
+                <li>Contributed to interdisciplinary research involving advanced thermal systems, additive manufacturing, and aerospace energy technologies</li>
+              </ul>
+              <p class="note"><strong>Technical Areas:</strong> heat pipes, thermal transport, aerospace thermal systems, additive manufacturing, high-temperature radiators</p>
+            </div>
+
+            <div class="card">
+              <h3>NAATOS TB Platform — Global Health Labs</h3>
+              <p>
+                Thermal modeling, validation, and optimization workflows for a point-of-care molecular diagnostic platform targeting low-cost tuberculosis diagnostics.
+              </p>
+              <ul class="clean">
+                <li>Developed COMSOL-based thermal models for thermal subsystem optimization</li>
+                <li>Built parametric thermal workflows to optimize heater sizing, thermal coverage, and power requirements</li>
+                <li>Validated simulation models experimentally with results within 6% of system predictions</li>
+                <li>Supported next-generation thermal architectures and transient thermal analysis</li>
+                <li>Performed thermal studies under varying environmental boundary conditions and operating scenarios</li>
+                <li>Contributed to optimization of heater design and energy/battery performance</li>
+              </ul>
+              <p class="note"><strong>Tools &amp; Methods:</strong> COMSOL, MATLAB, experimental validation, transient thermal analysis, thermal optimization</p>
+            </div>
+
+            <div class="card">
+              <h3>Atmospheric Water Harvesting Systems</h3>
+              <p>
+                Experimental and computational research on desiccant-based atmospheric water harvesting systems focused on improving regeneration efficiency and reducing energy consumption.
+              </p>
+              <ul class="clean">
+                <li>Developed ultrasound-assisted desorption methods reducing energy consumption by up to 25%</li>
+                <li>Designed and operated experimental testbeds for environmental performance characterization</li>
+                <li>Supported proposal development and collaborative thermal-fluid systems research</li>
+                <li>Contributed to publication and provisional patent activities</li>
+              </ul>
+              <p class="note"><strong>Tools &amp; Methods:</strong> experimental systems, thermal diagnostics, MATLAB, environmental testing</p>
+            </div>
+
+            <div class="card">
+              <h3>Two-Phase Cooling &amp; Heat Pipe Systems</h3>
+              <p>
+                Research and development of pulsating heat pipe systems, thermal transport structures, and high-power electronics cooling technologies.
+              </p>
+              <ul class="clean">
+                <li>Evaluated closed-loop pulsating heat pipe (CLPHP) systems for high-power electronics cooling</li>
+                <li>Developed automated thermal testing workflows under elevated temperature and vibration conditions</li>
+                <li>Designed permeability characterization systems for wick structures and porous transport materials</li>
+                <li>Contributed to DARPA, NSF SBIR/STTR, and industry-supported programs</li>
+              </ul>
+              <p class="note"><strong>Tools &amp; Methods:</strong> LabVIEW, thermal instrumentation, vibration testing, additive manufacturing</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="impact">
+          <h2>Technical Contributions &amp; Research Impact</h2>
+          <div class="card">
+            <ul class="clean">
+              <li>Developed ultrasound-assisted desiccant regeneration methods reducing energy consumption by up to 25%</li>
+              <li>Validated thermal simulation workflows experimentally with results within 6% of model predictions</li>
+              <li>Built experimental systems for evaluating two-phase cooling technologies and porous transport systems</li>
+              <li>Contributed to DARPA, NSF, biomedical technology, and aerospace thermal systems programs</li>
+              <li>Developed automated thermal testing platforms using LabVIEW and MATLAB</li>
+              <li>Supported interdisciplinary programs spanning energy systems, diagnostics, cooling technologies, and environmental engineering</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="methods">
+          <h2>Research Methods &amp; Technical Approaches</h2>
+          <div class="card">
+            <ul class="clean two-col" style="margin-left: 0; padding-left: 0; list-style: none;">
+              <li>Experimental thermal-fluid systems development</li>
+              <li>Integrated computational and experimental validation</li>
+              <li>Parametric thermal optimization workflows</li>
+              <li>Multiphysics thermal transport modeling</li>
+              <li>Environmental and reliability testing</li>
+              <li>Data acquisition and automated instrumentation</li>
+              <li>Systems-level engineering analysis</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="federal">
+          <h2>Federal &amp; Industry Research Programs</h2>
+          <div class="panel-grid">
+            <div class="card"><h3>DARPA SBIR Phase II</h3><p>Pulsating heat pipe cooling systems.</p></div>
+            <div class="card"><h3>NSF SBIR Phase II</h3><p>Two-phase cooling technologies.</p></div>
+            <div class="card"><h3>NSF STTR Phase I</h3><p>Pulsating heat pipe systems.</p></div>
+            <div class="card"><h3>NASA Early Stage Innovations (ESI)</h3><p>Additively manufactured heat pipe radiators.</p></div>
+            <div class="card"><h3>Industry R&amp;D</h3><p>Thermal management, aerospace thermal systems, and energy systems.</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="translation">
+          <h2>Technology Translation &amp; Commercialization</h2>
+          <div class="card">
+            <p>
+              Participated in NSF I-Corps Aspire and Lab2Launch programs as Technical Lead for the QuantumAtmos team,
+              supporting translation of advanced thermal and environmental technologies toward commercialization pathways.
+            </p>
+            <ul class="clean">
+              <li>Customer discovery and technology translation activities</li>
+              <li>Commercialization-focused technical evaluation</li>
+              <li>Interdisciplinary innovation and startup ecosystem engagement</li>
+              <li>Technology development at the interface of research and commercialization</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="publications">
+          <h2>Publications, Conferences &amp; Patent</h2>
+          <div class="card">
+            <ul class="clean">
+              <li>U.S. Provisional Patent: Ultrasound-Enhanced Desorption for Atmospheric Water Capture (2025)</li>
+              <li>Publications in: International Journal of Heat and Mass Transfer, International Journal of Thermal Sciences, and Environments</li>
+              <li>Conference contributions through ASTFE TFEC, AZ Water Conference, GOMACTech, and NASA Glenn Research Center activities</li>
+              <li>Research presentations spanning thermal management, atmospheric water harvesting, aerospace thermal systems, and advanced thermal technologies</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="talks">
+          <h2>Conference Presentations &amp; Technical Dissemination</h2>
+          <div class="card">
+            <ul class="clean">
+              <li>ASTFE TFEC 2026 — Oral presentation: Desorption Process Enhancement for Atmospheric Water Harvesting Using Ultrasound</li>
+              <li>AZ Water Conference 2026 — Selected Speaker, 99th Annual Conference</li>
+              <li>ASTFE TFEC 2025 — Poster Presentation and NSF Travel Award Recipient</li>
+              <li>GOMACTech 2026 — Research contributions presented under DARPA SBIR and NSF programs</li>
+              <li>NASA Glenn Research Center ESI Seminar — Collaborative technical discussions on advanced heat pipe radiator systems</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="awards">
+          <h2>Awards &amp; Recognition</h2>
+          <div class="panel-grid">
+            <div class="card"><h3>NSF Travel Award</h3><p>ASTFE TFEC 2025.</p></div>
+            <div class="card"><h3>NSF I-Corps Aspire &amp; Lab2Launch</h3><p>Technical Lead.</p></div>
+            <div class="card"><h3>ITherm Heat Sink Design Challenge 2019</h3><p>Finalist.</p></div>
+            <div class="card"><h3>SpaceX Hyperloop Competition 2017</h3><p>Finalist.</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="service">
+          <h2>Professional Service</h2>
+          <div class="card">
+            <ul class="clean">
+              <li>Reviewer for ASME and IEEE journals/conferences</li>
+              <li>ASTFE Student Committee Member</li>
+              <li>Member: ASME, ASTFE, IEEE EPS</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="education">
+          <h2>Education</h2>
+          <div class="panel-grid">
+            <div class="card"><h3>PhD, Mechanical Engineering</h3><p>Arizona State University, 2025</p></div>
+            <div class="card"><h3>MS, Mechanical Engineering</h3><p>Arizona State University, 2018</p></div>
+            <div class="card"><h3>B.Tech, Mechanical Engineering</h3><p>Indian Institute of Technology Madras, 2016</p></div>
+          </div>
+        </section>
+
+        <section class="section" id="media">
+          <h2>Research Recognition &amp; Media Coverage</h2>
+          <div class="card">
+            <ul class="clean">
+              <li>Featured in ASU News for thermal technology research</li>
+              <li>Research highlighted in 3D Printing Industry</li>
+              <li>Featured in VoxelMatters on advanced thermal technologies</li>
+              <li>Innovation spotlight recognition through NSF Engines ecosystem and The Engine (MIT)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="collaboration">
+          <h2>Collaborative Research Activities</h2>
+          <div class="card">
+            <p>
+              Collaborative research and technical engagement activities involving Arizona State University, NASA Glenn Research Center,
+              Pennsylvania State University, Cornell University, University of Cincinnati, University of Arkansas, and industry research organizations.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <h2>Links</h2>
+          <div class="panel-grid">
+            <div class="card"><h3>LinkedIn</h3><p><a href="https://linkedin.com/in/gokul-chandrasekaran" target="_blank" rel="noreferrer">Open profile</a></p></div>
+            <div class="card"><h3>Google Scholar</h3><p><a href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Open profile</a></p></div>
+            <div class="card"><h3>Email</h3><p><a href="mailto:gchandr8@asu.edu">gchandr8@asu.edu</a></p></div>
+            <div class="card"><h3>CV / Resume</h3><p><a href="Resume_GC.pdf" target="_blank" rel="noreferrer">Download PDF</a></p></div>
+          </div>
+
+          <p class="keywords">
+            Thermal Management • Two-Phase Heat Transfer • Atmospheric Water Harvesting • Porous Media Transport • Biomedical Thermal Systems • Point-of-Care Diagnostics • Space Thermal Systems • Thermal Modeling • COMSOL • Heat Pipes • Energy Systems
+          </p>
+        </section>
+
+        <div class="footer">
+          Built as a compact technical dossier for quick reference and professional visibility.
+        </div>
+      </main>
     </div>
-
-    <h2>Professional Timeline</h2>
-    <div class="highlight-box">
-      <p><strong>2026–Present</strong> — Lead, Thermal Engineering — Global Cooling Technology Group, LLC</p>
-      <p><strong>2026–Present</strong> — Postdoctoral Research Scholar — Arizona State University</p>
-      <p><strong>2018–2025</strong> — Graduate Research Assistant (PhD) — Arizona State University</p>
-      <p><strong>2023</strong> — Thermal Modeling Engineering Intern — Global Health Labs</p>
-    </div>
-
-    <h2 id="domains">Research &amp; Engineering Domains</h2>
-
-    <h3>Thermal Management</h3>
-    <ul>
-      <li>High-power electronics cooling</li>
-      <li>Heat pipes and thermal transport systems</li>
-      <li>Closed-loop pulsating heat pipe (CLPHP) systems</li>
-      <li>Thermal diagnostics and thermal performance evaluation</li>
-    </ul>
-
-    <h3>Two-Phase Heat Transfer</h3>
-    <ul>
-      <li>Pulsating heat pipe systems</li>
-      <li>Boiling and condensation transport phenomena</li>
-      <li>Two-phase cooling technologies</li>
-      <li>Capillary-driven thermal systems</li>
-    </ul>
-
-    <h3 id="space">Space Thermal Systems &amp; Aerospace Applications</h3>
-    <ul>
-      <li>Additively manufactured heat pipe radiators for spaceflight applications</li>
-      <li>High-temperature thermal transport systems for nuclear electric propulsion (NEP) and fission surface power (FSP)</li>
-      <li>Thermal management systems for aerospace and extreme-environment applications</li>
-      <li>Additive manufacturing approaches for lightweight radiator architectures</li>
-      <li>Collaborative NASA Early Stage Innovation (ESI) research activities</li>
-      <li>Heat pipe radiator technologies for advanced spacecraft thermal control</li>
-    </ul>
-
-    <h3>Atmospheric Water Harvesting</h3>
-    <ul>
-      <li>Desiccant-based atmospheric water harvesting</li>
-      <li>Ultrasound-assisted desorption enhancement</li>
-      <li>Sorption and regeneration systems</li>
-      <li>Water-energy system integration</li>
-    </ul>
-
-    <h3>Porous Media Transport</h3>
-    <ul>
-      <li>Permeability characterization</li>
-      <li>Porous transport phenomena</li>
-      <li>Metal-coated polymer foams</li>
-      <li>Capillary and multiphase transport</li>
-    </ul>
-
-    <h3>Thermal Modeling &amp; Simulation</h3>
-    <ul>
-      <li>COMSOL Multiphysics</li>
-      <li>ANSYS Fluent</li>
-      <li>MATLAB-based modeling workflows</li>
-      <li>Experimental and simulation data integration</li>
-    </ul>
-
-    <h3>Biomedical Thermal Systems &amp; Diagnostics</h3>
-    <ul>
-      <li>Thermal modeling for point-of-care molecular diagnostic systems</li>
-      <li>COMSOL-based thermal architecture optimization for the NAATOS TB platform</li>
-      <li>Parametric thermal modeling workflows for heater optimization and power management</li>
-      <li>Experimental validation of thermal models and thermal subsystem characterization</li>
-      <li>Optimization of thermal uniformity, power distribution, and energy efficiency</li>
-      <li>Simulation-supported development workflows for biomedical device design</li>
-      <li>Thermal analysis under varying environmental and operational conditions</li>
-      <li>Integrated experimental and computational workflows for product development</li>
-    </ul>
-
-    <h3>Experimental Systems Engineering</h3>
-    <ul>
-      <li>LabVIEW automation</li>
-      <li>Instrumentation and thermal diagnostics</li>
-      <li>Automated thermal testing platforms</li>
-      <li>Elevated temperature and vibration testing</li>
-    </ul>
-
-    <h3>Additive Manufacturing &amp; Materials</h3>
-    <ul>
-      <li>Additively manufactured wick structures</li>
-      <li>Thermal composites and porous materials</li>
-      <li>3D-printed thermal technologies</li>
-      <li>Advanced thermal materials characterization</li>
-    </ul>
-
-    <h2 id="projects">Programs &amp; Projects</h2>
-
-    <div class="highlight-box">
-      <h3>NASA Early Stage Innovations (ESI) — Space Thermal Systems</h3>
-      <p>
-        Research contributions supporting additively manufactured high-temperature heat pipe radiators for future
-        spaceflight thermal management applications, including nuclear electric propulsion (NEP) and fission surface
-        power (FSP) systems.
-      </p>
-      <ul>
-        <li>Contributed to thermal transport and wick structure characterization for additively manufactured heat pipe systems</li>
-        <li>Supported experimental validation activities for high-temperature radiator technologies</li>
-        <li>Participated in NASA Glenn Research Center Early Stage Innovation research seminar and technical collaboration activities</li>
-        <li>Contributed to interdisciplinary research involving advanced thermal systems, additive manufacturing, and aerospace energy technologies</li>
-      </ul>
-      <p><strong>Technical Areas:</strong> heat pipes, thermal transport, aerospace thermal systems, additive manufacturing, high-temperature radiators</p>
-    </div>
-
-    <div class="highlight-box">
-      <h3>NAATOS TB Platform — Global Health Labs</h3>
-      <p>
-        Contributed thermal modeling, validation, and optimization workflows for the NAATOS TB molecular diagnostic
-        platform targeting low-cost, point-of-care tuberculosis diagnostics.
-      </p>
-      <ul>
-        <li>Developed COMSOL-based thermal models for thermal subsystem optimization</li>
-        <li>Built parametric thermal workflows to optimize heater sizing, thermal coverage, and power requirements</li>
-        <li>Validated simulation models experimentally with results within 6% of system predictions</li>
-        <li>Supported development workflows for next-generation thermal architectures and transient thermal analysis</li>
-        <li>Performed thermal studies under varying environmental boundary conditions and operating scenarios</li>
-        <li>Contributed to optimization of heater design and energy/battery performance</li>
-      </ul>
-      <p><strong>Tools &amp; Methods:</strong> COMSOL, MATLAB, experimental validation, transient thermal analysis, thermal optimization</p>
-    </div>
-
-    <div class="highlight-box">
-      <h3>Atmospheric Water Harvesting Systems</h3>
-      <p>
-        Experimental and computational research on desiccant-based atmospheric water harvesting systems focused on
-        improving regeneration efficiency and reducing energy consumption.
-      </p>
-      <ul>
-        <li>Developed ultrasound-assisted desorption methods reducing energy consumption by up to 25%</li>
-        <li>Designed and operated experimental testbeds for environmental performance characterization</li>
-        <li>Supported proposal development and collaborative thermal-fluid systems research</li>
-        <li>Contributed to publication and provisional patent activities</li>
-      </ul>
-      <p><strong>Tools &amp; Methods:</strong> experimental systems, thermal diagnostics, MATLAB, environmental testing</p>
-    </div>
-
-    <div class="highlight-box">
-      <h3>Two-Phase Cooling &amp; Heat Pipe Systems</h3>
-      <p>
-        Research and development of pulsating heat pipe systems, thermal transport structures, and high-power electronics
-        cooling technologies.
-      </p>
-      <ul>
-        <li>Evaluated closed-loop pulsating heat pipe (CLPHP) systems for high-power electronics cooling</li>
-        <li>Developed automated thermal testing workflows under elevated temperature and vibration conditions</li>
-        <li>Designed permeability characterization systems for wick structures and porous transport materials</li>
-        <li>Contributed to DARPA, NSF SBIR/STTR, and industry-supported programs</li>
-      </ul>
-      <p><strong>Tools &amp; Methods:</strong> LabVIEW, thermal instrumentation, vibration testing, additive manufacturing</p>
-    </div>
-
-    <h2 id="impact">Technical Contributions &amp; Research Impact</h2>
-    <ul>
-      <li>Developed ultrasound-assisted desiccant regeneration methods reducing energy consumption by up to 25%</li>
-      <li>Validated thermal simulation workflows experimentally with results within 6% of model predictions</li>
-      <li>Built experimental systems for evaluating two-phase cooling technologies and porous transport systems</li>
-      <li>Contributed to DARPA, NSF, biomedical technology, and aerospace thermal systems programs</li>
-      <li>Developed automated thermal testing platforms using LabVIEW and MATLAB</li>
-      <li>Supported interdisciplinary programs spanning energy systems, diagnostics, cooling technologies, and environmental engineering</li>
-    </ul>
-
-    <h2 id="methods">Research Methods &amp; Technical Approaches</h2>
-    <ul>
-      <li>Experimental thermal-fluid systems development</li>
-      <li>Integrated computational and experimental validation</li>
-      <li>Parametric thermal optimization workflows</li>
-      <li>Multiphysics thermal transport modeling</li>
-      <li>Environmental and reliability testing</li>
-      <li>Data acquisition and automated instrumentation</li>
-      <li>Systems-level engineering analysis</li>
-    </ul>
-
-    <h2 id="federal">Federal &amp; Industry Research Programs</h2>
-    <ul>
-      <li>DARPA SBIR Phase II — Pulsating heat pipe cooling systems</li>
-      <li>NSF SBIR Phase II — Two-phase cooling technologies</li>
-      <li>NSF STTR Phase I — Pulsating heat pipe systems</li>
-      <li>NASA Early Stage Innovations (ESI) — Additively manufactured heat pipe radiators</li>
-      <li>Industry R&amp;D collaborations in thermal management, aerospace thermal systems, and energy systems</li>
-    </ul>
-
-    <h2 id="translation">Technology Translation &amp; Commercialization</h2>
-    <div class="highlight-box">
-      <p>
-        Participated in NSF I-Corps Aspire and Lab2Launch programs as Technical Lead for the QuantumAtmos team,
-        supporting translation of advanced thermal and environmental technologies toward commercialization pathways.
-      </p>
-      <ul>
-        <li>Customer discovery and technology translation activities</li>
-        <li>Commercialization-focused technical evaluation</li>
-        <li>Interdisciplinary innovation and startup ecosystem engagement</li>
-        <li>Technology development at the interface of research and commercialization</li>
-      </ul>
-    </div>
-
-    <h2 id="publications">Publications, Conferences &amp; Patent</h2>
-    <ul>
-      <li>U.S. Provisional Patent: Ultrasound-Enhanced Desorption for Atmospheric Water Capture (2025)</li>
-      <li>Publications in: International Journal of Heat and Mass Transfer, International Journal of Thermal Sciences, and Environments</li>
-      <li>Conference contributions through ASTFE TFEC, AZ Water Conference, GOMACTech, and NASA Glenn Research Center activities</li>
-      <li>Research presentations spanning thermal management, atmospheric water harvesting, aerospace thermal systems, and advanced thermal technologies</li>
-    </ul>
-
-    <h2 id="talks">Conference Presentations &amp; Technical Dissemination</h2>
-    <ul>
-      <li>ASTFE TFEC 2026 — Oral presentation: Desorption Process Enhancement for Atmospheric Water Harvesting Using Ultrasound</li>
-      <li>AZ Water Conference 2026 — Selected Speaker, 99th Annual Conference</li>
-      <li>ASTFE TFEC 2025 — Poster Presentation and NSF Travel Award Recipient</li>
-      <li>GOMACTech 2026 — Research contributions presented under DARPA SBIR and NSF programs</li>
-      <li>NASA Glenn Research Center ESI Seminar — Collaborative technical discussions on advanced heat pipe radiator systems</li>
-    </ul>
-
-    <h2 id="awards">Awards &amp; Recognition</h2>
-    <ul>
-      <li>NSF Travel Award — ASTFE TFEC 2025</li>
-      <li>NSF I-Corps Aspire &amp; Lab2Launch — Technical Lead</li>
-      <li>ITherm Heat Sink Design Challenge 2019 — Finalist</li>
-      <li>SpaceX Hyperloop Competition 2017 — Finalist</li>
-    </ul>
-
-    <h2 id="service">Professional Service</h2>
-    <ul>
-      <li>Reviewer for ASME and IEEE journals/conferences</li>
-      <li>ASTFE Student Committee Member</li>
-      <li>Member: ASME, ASTFE, IEEE EPS</li>
-    </ul>
-
-    <h2 id="education">Education</h2>
-    <div class="highlight-box">
-      <p><strong>PhD, Mechanical Engineering</strong><br>Arizona State University, 2025</p>
-      <p><strong>MS, Mechanical Engineering</strong><br>Arizona State University, 2018</p>
-      <p><strong>B.Tech, Mechanical Engineering</strong><br>Indian Institute of Technology Madras, 2016</p>
-    </div>
-
-    <h2 id="media">Research Recognition &amp; Media Coverage</h2>
-    <ul>
-      <li>Featured in ASU News for thermal technology research</li>
-      <li>Research highlighted in 3D Printing Industry</li>
-      <li>Featured in VoxelMatters on advanced thermal technologies</li>
-      <li>Innovation spotlight recognition through NSF Engines ecosystem and The Engine (MIT)</li>
-    </ul>
-
-    <h2 id="collaboration">Collaborative Research Activities</h2>
-    <p>
-      Collaborative research and technical engagement activities involving Arizona State University, NASA Glenn Research Center,
-      Pennsylvania State University, Cornell University, University of Cincinnati, University of Arkansas, and industry research organizations.
-    </p>
-
-    <h2 id="contact">Links</h2>
-    <p>
-      <a href="https://linkedin.com/in/gokul-chandrasekaran" target="_blank" rel="noreferrer">LinkedIn</a>
-    </p>
-    <p>
-      <a href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
-    </p>
-    <p>
-      Email: <a href="mailto:gchandr8@asu.edu">gchandr8@asu.edu</a>
-    </p>
-    <p>
-      <a href="Resume_GC.pdf" target="_blank" rel="noreferrer">Download CV / Resume</a>
-    </p>
-
-    <p class="keywords">
-      Thermal Management • Two-Phase Heat Transfer • Atmospheric Water Harvesting • Porous Media Transport • Biomedical Thermal Systems • Point-of-Care Diagnostics • Space Thermal Systems • Thermal Modeling • COMSOL • Heat Pipes • Energy Systems
-    </p>
   </div>
 </body>
 </html>
