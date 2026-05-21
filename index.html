@@ -40,7 +40,14 @@
       margin: 0 auto;
       padding: 24px 18px 56px;
     }
-
+.nav {
+  background: rgba(255,255,255,0.75);
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+    .nav a:hover {
+  text-decoration: underline;
+}
     .nav {
       display: flex;
       flex-wrap: wrap;
@@ -50,7 +57,8 @@
     }
 
     .nav a {
-      color: var(--muted);
+        color: var(--text);
+  font-weight: 500;
       text-decoration: none;
       padding: 6px 10px;
       border-radius: 999px;
