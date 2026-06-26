@@ -1,360 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gokul Chandrasekaran — peer review, professional memberships, and academic service." />
   <title>Professional Service | Gokul Chandrasekaran</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
-
-    :root {
-      --bg: #eef2f6;
-      --card: #ffffff;
-      --text: #17212b;
-      --muted: #5f6b78;
-      --line: rgba(23,33,43,0.10);
-      --accent: #173a63;
-      --shadow: 0 14px 36px rgba(23,33,43,0.08);
-      --radius: 14px;
+    :root{
+      --max: 1160px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    .page {
-      max-width: 860px;
+    .section-inner{
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 24px 18px 56px;
+      padding: 0 10px;
     }
 
-    .nav {
-      margin-bottom: 18px;
-      font-size: 14px;
-    }
-
-    .nav a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .nav a:hover {
+    .page-title{
       color: var(--accent);
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .shell {
-      background: rgba(255,255,255,0.92);
+    .hero-card{
+      background: rgba(255,255,255,0.97);
+      border: 1px solid var(--line);
       border-radius: 24px;
-      overflow: hidden;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.7);
+      padding: 22px;
     }
 
-    .hero {
-      padding: 34px 30px 24px;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(
-        180deg,
-        rgba(255,255,255,0.96),
-        rgba(255,255,255,0.84)
-      );
+    .service-grid{
+      display:grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
+    .span-6{ grid-column: span 6; }
+    .span-12{ grid-column: span 12; }
+
+    .section{
+      padding: 22px 0 10px;
     }
 
-    .subtitle {
-      margin-top: 12px;
-      color: var(--muted);
-      max-width: 720px;
-    }
-
-    .content {
-      padding: 28px 30px 36px;
-    }
-
-    .section {
-      margin-top: 28px;
-    }
-
-    .section h2 {
+    .section h2{
       margin: 0 0 14px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--line);
-      font-size: 1.22rem;
+      color: var(--accent);
+      font-size: 1.16rem;
+      letter-spacing: -0.01em;
     }
 
-    .panel {
-      background: var(--card);
+    .card h3{
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .list{
+      display:grid;
+      gap: 12px;
+    }
+
+    .item{
+      padding: 16px 18px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 18px;
+      border-radius: 18px;
+      background: white;
     }
 
-    .service-item {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
+    .item strong{
+      display:block;
+      margin-bottom: 4px;
     }
 
-    .service-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .service-title {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .service-meta {
-      margin-top: 5px;
+    .meta-line{
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .footer {
-      margin-top: 28px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
+    .small-muted{
       color: var(--muted);
-      font-size: 13px;
+      font-size: 0.94rem;
     }
 
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #edf4ff;
+      color: #34507c;
+      border: 1px solid rgba(36,86,166,0.10);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px){
+      .span-6, .span-12{
+        grid-column: span 12;
+      }
+    }
   </style>
-
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="page">
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="name">Gokul Chandrasekaran</div>
+        <div class="role">Mechanical Engineer • Thermal-Fluid Systems • Water &amp; Thermal Technologies</div>
+      </div>
 
-    <div class="nav">
-      <a href="index.html">← Back to Home</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#research-areas">Research</a>
+        <a href="index.html#evidence">Evidence</a>
+        <a href="publications.html">Publications</a>
+        <a href="service.html" aria-current="page">Service</a>
+        <a href="awards.html">Awards</a>
+        <a href="media.html">Media</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
+  <main id="main" class="page">
     <div class="shell">
+      <section class="hero">
+        <span class="eyebrow">Professional Service</span>
 
-      <header class="hero">
+        <div class="hero-grid">
+          <div>
+            <h1>Peer review and professional service.</h1>
+            <p class="subtitle">
+              Peer review, society participation, and academic service across thermal engineering, electronics packaging,
+              and related research communities.
+            </p>
 
-        <h1>Professional Service</h1>
-
-        <p class="subtitle">
-          Peer review activities, professional society participation,
-          and technical community involvement in thermal-fluid systems
-          and thermal management engineering.
-        </p>
-
-      </header>
-
-      <main class="content">
-
-        <section class="section">
-
-          <h2>Reviewer Activities</h2>
-
-          <div class="panel">
-
-            <div class="service-item">
-
-              <div class="service-title">
-                ASME Journal of Thermal Science and Engineering Applications
-              </div>
-
-              <div class="service-meta">
-                Peer Reviewer
-              </div>
-
+            <div class="actions">
+              <a class="button primary" href="index.html#evidence">Evidence Snapshot</a>
+              <a class="button" href="publications.html">Publications</a>
+              <a class="button" href="media.html">Media</a>
             </div>
-
-            <div class="service-item">
-
-              <div class="service-title">
-                IEEE Electron Devices Magazine
-              </div>
-
-              <div class="service-meta">
-                Peer Reviewer
-              </div>
-
-            </div>
-
-            <div class="service-item">
-
-              <div class="service-title">
-                IEEE Transactions on Components, Packaging and Manufacturing Technology (T-CPMT)
-              </div>
-
-              <div class="service-meta">
-                Peer Reviewer
-              </div>
-
-            </div>
-
-            <div class="service-item">
-
-              <div class="service-title">
-                ITherm Conference
-              </div>
-
-              <div class="service-meta">
-                Technical Reviewer
-              </div>
-
-            </div>
-
-            <div class="service-item">
-
-              <div class="service-title">
-                Ain Shams Engineering Journal
-              </div>
-
-              <div class="service-meta">
-                Peer Reviewer
-              </div>
-
-            </div>
-
           </div>
 
-        </section>
-
-        <section class="section">
-
-          <h2>Professional Memberships</h2>
-
-          <div class="panel">
-
-            <div class="service-item">
-
-              <div class="service-title">
-                American Society of Mechanical Engineers (ASME)
+          <aside class="hero-card" aria-label="Service snapshot">
+            <h2>Service Snapshot</h2>
+            <div class="mini-list">
+              <div class="mini">
+                <h3>Peer review</h3>
+                <p>Completed reviews for ASME, IEEE, Elsevier, and ITherm.</p>
               </div>
-
-              <div class="service-meta">
-                Member
+              <div class="mini">
+                <h3>Society participation</h3>
+                <p>Professional memberships and committee participation in thermal-fluid engineering communities.</p>
               </div>
-
+              <div class="mini">
+                <h3>University service</h3>
+                <p>Academic integrity and student service participation at Arizona State University.</p>
+              </div>
             </div>
-
-            <div class="service-item">
-
-              <div class="service-title">
-                American Society of Thermal and Fluids Engineers (ASTFE)
-              </div>
-
-              <div class="service-meta">
-                Student Committee (2025–2026)
-              </div>
-
-            </div>
-
-            <div class="service-item">
-
-              <div class="service-title">
-                IEEE Electronics Packaging Society
-              </div>
-
-              <div class="service-meta">
-                Member
-              </div>
-
-            </div>
-
-            <div class="service-item">
-
-              <div class="service-title">
-                International Atmospheric Water Harvesting Association (IAWHA)
-              </div>
-
-              <div class="service-meta">
-                Member
-              </div>
-
-            </div>
-
-            <div class="service-item">
-
-              <div class="service-title">
-                American Association for the Advancement of Science (AAAS)
-              </div>
-
-              <div class="service-meta">
-                Member
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
-<section class="section">
-
-  <h2>Academic Integrity Service</h2>
-
-  <div class="panel">
-
-    <div class="service-item">
-
-      <div class="service-title">
-        Fulton Academic Integrity Matters (FAIM) Program
-      </div>
-
-      <div class="service-meta">
-        Student Representative and Academic Integrity Appeal Hearing Participant
-        (2021–2026)
-      </div>
-
-    </div>
-
-    <div class="service-item">
-
-      <div class="service-title">
-        Recognition Levels
-      </div>
-
-      <div class="service-meta">
-        2021–2022: Participation<br>
-        2022–2023: Silver<br>
-        2023–2024: Platinum Plus<br>
-        2024–2025: Platinum Plus<br>
-        2025–2026: Gold
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-        <div class="footer">
-          Professional service activities updated periodically.
+          </aside>
         </div>
+      </section>
 
-      </main>
+      <section class="section">
+        <div class="section-inner">
+          <h2>Peer Review Activities</h2>
+          <div class="service-grid">
+            <div class="card span-6">
+              <h3>Journals</h3>
+              <div class="list">
+                <div class="item">
+                  <strong>ASME Journal of Thermal Science and Engineering Applications</strong>
+                  <div class="meta-line">Peer reviewer</div>
+                </div>
+                <div class="item">
+                  <strong>IEEE Transactions on Components, Packaging and Manufacturing Technology (T-CPMT)</strong>
+                  <div class="meta-line">Peer reviewer</div>
+                </div>
+                <div class="item">
+                  <strong>IEEE Electron Devices Magazine</strong>
+                  <div class="meta-line">Peer reviewer</div>
+                </div>
+                <div class="item">
+                  <strong>Ain Shams Engineering Journal</strong>
+                  <div class="meta-line">Peer reviewer; recognition certificate issued for completed reviews</div>
+                </div>
+              </div>
+            </div>
 
+            <div class="card span-6">
+              <h3>Conferences</h3>
+              <div class="list">
+                <div class="item">
+                  <strong>IEEE ITherm Conference</strong>
+                  <div class="meta-line">Technical paper review and poster review activity</div>
+                </div>
+                <div class="item">
+                  <strong>ITherm 2026</strong>
+                  <div class="meta-line">Completed paper reviews and poster reviews across thermal management tracks</div>
+                </div>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">Completed reviews</span>
+                <span class="pill">Thermal management</span>
+                <span class="pill">Electronics packaging</span>
+                <span class="pill">Two-phase flow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2>Professional Memberships</h2>
+          <div class="service-grid">
+            <div class="card span-6">
+              <h3>Society memberships</h3>
+              <div class="list">
+                <div class="item">
+                  <strong>American Society of Mechanical Engineers (ASME)</strong>
+                  <div class="meta-line">Member</div>
+                </div>
+                <div class="item">
+                  <strong>American Society of Thermal and Fluids Engineers (ASTFE)</strong>
+                  <div class="meta-line">Student Committee (2025–2026)</div>
+                </div>
+                <div class="item">
+                  <strong>IEEE Electronics Packaging Society</strong>
+                  <div class="meta-line">Member</div>
+                </div>
+                <div class="item">
+                  <strong>International Atmospheric Water Harvesting Association (IAWHA)</strong>
+                  <div class="meta-line">Member</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card span-6">
+              <h3>Academic service</h3>
+              <div class="item">
+                <strong>Fulton Academic Integrity Matters (FAIM) Program</strong>
+                <div class="meta-line">Student Representative and Academic Integrity Appeal Hearing Participant (2021–2026)</div>
+              </div>
+
+              <div style="height:12px"></div>
+
+              <div class="card" style="background: var(--surface-2);">
+                <h3 style="margin-top:0;">Recognition levels</h3>
+                <div class="list">
+                  <div class="item"><strong>2021–2022</strong><div class="meta-line">Participation</div></div>
+                  <div class="item"><strong>2022–2023</strong><div class="meta-line">Silver</div></div>
+                  <div class="item"><strong>2023–2024</strong><div class="meta-line">Platinum Plus</div></div>
+                  <div class="item"><strong>2024–2025</strong><div class="meta-line">Platinum Plus</div></div>
+                  <div class="item"><strong>2025–2026</strong><div class="meta-line">Gold</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2>Service Notes</h2>
+          <div class="card">
+            <p class="small-muted" style="margin:0;">
+              This page is intended to document peer review, committee participation, and academic service activities in a way that is
+              useful for professional review and immigration evidence.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-
-  </div>
-
+  </main>
 </body>
-
 </html>
