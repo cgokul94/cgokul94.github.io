@@ -3,139 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gokul Chandrasekaran — mechanical engineer working in thermal-fluid systems, atmospheric water harvesting, advanced thermal management, and technology commercialization." />
+  <meta name="description" content="Gokul Chandrasekaran — mechanical engineer focused on electronics cooling, thermal-fluid systems, atmospheric water harvesting, and thermal modeling." />
   <title>Gokul Chandrasekaran</title>
+
   <link rel="stylesheet" href="styles.css" />
 
   <style>
+    :root{
+      --bg:#f7f9fc;
+      --surface:#ffffff;
+      --surface-2:#f5f8fd;
+      --text:#1d2634;
+      --muted:#637082;
+      --line:#d9e2ef;
+      --accent:#2456a6;
+      --accent-2:#eaf1fb;
+      --shadow:0 14px 35px rgba(20, 32, 52, .08);
+      --radius:24px;
+      --max:1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eef4fb 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+    }
+    .skip-link:focus {
+      left: 16px;
+      top: 16px;
+      z-index: 1000;
+      background: var(--surface);
+      padding: 10px 14px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(244, 247, 251, 0.92);
+      background: rgba(247, 249, 252, 0.94);
       backdrop-filter: saturate(180%) blur(14px);
-      border-bottom: 1px solid rgba(219, 227, 238, 0.9);
+      border-bottom: 1px solid rgba(217, 226, 239, 0.9);
     }
 
     .header-inner {
-      min-height: 64px;
-      gap: 12px;
-      padding: 10px 0;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      min-height: 72px;
     }
 
+    .brand {
+      min-width: 240px;
+    }
     .brand .name {
-      font-size: 1.02rem;
-      line-height: 1.2;
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
     }
-
     .brand .role {
-      font-size: 0.9rem;
-      line-height: 1.35;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 3px;
     }
 
     .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
       gap: 6px 10px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
+      min-width: 0;
+      margin-left: auto;
     }
-
-    .nav::-webkit-scrollbar {
-      display: none;
-    }
-
     .nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
       white-space: nowrap;
-      font-size: 0.9rem;
-      padding: 7px 9px;
+    }
+    .nav a:hover,
+    .nav a[aria-current="page"] {
+      background: rgba(36, 86, 166, 0.10);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 18px 52px;
+    }
+
+    .shell {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
     .hero {
-      padding: 30px 0 18px;
+      padding: 34px 30px 28px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 88% 22%, rgba(36,86,166,0.12), transparent 26%),
+        radial-gradient(circle at 20% 88%, rgba(36,86,166,0.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.88));
     }
 
-    .hero-card {
-      padding: 28px;
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
-      gap: 18px;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 20px;
       align-items: start;
     }
 
     h1 {
-      margin: 14px 0 12px;
-      font-size: clamp(2rem, 4vw, 3.35rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+      margin: 0;
       max-width: 12ch;
+      font-size: clamp(2.1rem, 4vw, 3.7rem);
+      line-height: 1.03;
+      letter-spacing: -0.05em;
     }
 
-    .hero-copy {
+    .subtitle {
+      margin-top: 14px;
       max-width: 760px;
+      color: var(--muted);
       font-size: 1.02rem;
     }
 
-    .intro-card {
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(36, 86, 166, 0.18);
       background: white;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.94rem;
+      box-shadow: 0 6px 16px rgba(20, 32, 52, 0.04);
+    }
+    .button.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.95);
       border: 1px solid var(--line);
       border-radius: 24px;
-      padding: 20px;
       box-shadow: var(--shadow);
+      padding: 18px;
     }
 
-    .intro-card h2 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
+    .mini-list {
+      display: grid;
+      gap: 14px;
     }
 
-    .intro-card p {
+    .mini {
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .mini:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    .mini h3 {
+      margin: 0 0 4px;
+      font-size: 0.98rem;
+      color: var(--accent);
+    }
+    .mini p {
       margin: 0;
       color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    .stat-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .stat {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 14px 16px;
-      background: var(--surface-2);
-    }
-
-    .stat .label {
-      display: block;
-      color: var(--muted);
-      font-size: 0.82rem;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 700;
-    }
-
-    .stat .value {
-      font-weight: 700;
-      line-height: 1.35;
-    }
-
-    .hero-meta {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 20px;
+    .content {
+      padding: 26px 30px 36px;
     }
 
     .section {
-      padding: 18px 0 10px;
+      margin-top: 26px;
     }
 
     .section h2 {
-      margin-bottom: 12px;
+      margin: 0 0 12px;
+      font-size: 1.18rem;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: -0.01em;
     }
 
     .summary-grid {
@@ -144,12 +256,83 @@
       gap: 14px;
     }
 
-    .summary-grid .card {
-      min-height: 100%;
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 8px 18px rgba(20, 32, 52, 0.04);
     }
 
-    .summary-grid .card h3 {
-      margin-bottom: 8px;
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #edf3fb;
+      color: #29435f;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border: 1px solid rgba(36,86,166,0.10);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+    .time {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .timeline-item h3 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .footer-note {
@@ -160,36 +343,55 @@
       font-size: 13px;
     }
 
+    .small-muted {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
     @media (max-width: 900px) {
+      .hero,
+      .content {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
       .hero-grid,
       .summary-grid {
         grid-template-columns: 1fr;
       }
-
-      .hero-card {
-        padding: 22px;
+      .span-4, .span-6, .span-8, .span-12 {
+        grid-column: span 12;
       }
-
       h1 {
         max-width: none;
       }
-
       .nav {
-        overflow-x: auto;
+        justify-content: flex-start;
+      }
+      .header-inner {
+        align-items: flex-start;
+      }
+      .timeline-item {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 560px) {
+      .page {
+        padding: 12px 10px 24px;
+      }
       .hero {
-        padding-top: 18px;
+        padding-top: 24px;
+        padding-bottom: 22px;
       }
-
       .hero-card {
-        padding: 18px;
+        padding: 16px;
       }
-
       .brand .role {
         font-size: 0.86rem;
+      }
+      .nav a {
+        padding: 7px 9px;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -198,7 +400,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <div class="brand">
         <div class="name">Gokul Chandrasekaran</div>
         <div class="role">Mechanical Engineer • Thermal-Fluid Systems • Water &amp; Thermal Technologies</div>
@@ -218,128 +420,95 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-card">
-          <span class="kicker">Research Engineer</span>
+  <main id="main" class="page">
+    <div class="shell">
+      <section class="hero">
+        <span class="eyebrow">Research Engineer</span>
 
-          <div class="hero-grid">
-            <div>
-              <h1>Thermal-fluid systems, atmospheric water harvesting, and advanced thermal management.</h1>
-              <p class="hero-copy">
-                I work across federally funded research, industry R&amp;D, and technology commercialization in two-phase cooling,
-                heat pipes, porous media, additive manufacturing, and desiccant-based atmospheric water harvesting.
-              </p>
+        <div class="hero-grid">
+          <div>
+            <h1>Electronics cooling and advanced thermal management systems.</h1>
+            <p class="subtitle">
+              I work in thermal-fluid systems, heat transfer, and technology translation, with experience in two-phase cooling,
+              heat pipes, porous media, additive manufacturing, and atmospheric water harvesting.
+            </p>
 
-              <div class="hero-meta">
-                <div class="meta">
-                  <span class="label">Location</span>
-                  <span class="value">Tempe, Arizona</span>
-                </div>
-                <div class="meta">
-                  <span class="label">Primary focus</span>
-                  <span class="value">Thermal-fluid engineering</span>
-                </div>
-                <div class="meta">
-                  <span class="label">Current roles</span>
-                  <span class="value">Global Cooling Technology Group / ASU</span>
-                </div>
-                <div class="meta">
-                  <span class="label">Work streams</span>
-                  <span class="value">Research • Review • Commercialization</span>
-                </div>
-              </div>
-
-              <div class="pills">
-                <span class="pill">Two-phase cooling</span>
-                <span class="pill">Atmospheric water harvesting</span>
-                <span class="pill">Heat pipes</span>
-                <span class="pill">Additive manufacturing</span>
-                <span class="pill">Thermal modeling</span>
-                <span class="pill">Commercialization</span>
-              </div>
-            </div>
-
-            <div class="stat-list">
-              <div class="intro-card">
-                <h2>At a glance</h2>
-                <p>
-                  Focused on thermal systems that move from experiments and modeling into deployable products.
-                </p>
-              </div>
-
-              <div class="stat">
-                <span class="label">Research</span>
-                <div class="value">Two-phase cooling, water harvesting, heat pipe radiators</div>
-              </div>
-
-              <div class="stat">
-                <span class="label">Service</span>
-                <div class="value">13+ completed peer reviews across ASME, IEEE, Elsevier, and ITherm</div>
-              </div>
-
-              <div class="stat">
-                <span class="label">Innovation</span>
-                <div class="value">Patent-pending atmospheric water harvesting technology</div>
-              </div>
+            <div class="actions">
+              <a class="button primary" href="publications.html">Publications</a>
+              <a class="button" href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+              <a class="button" href="https://linkedin.com/in/gokul-chandrasekaran" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="button" href="Resume_GC.pdf" target="_blank" rel="noreferrer">Download CV</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="summary" class="section">
-      <div class="container">
+          <aside class="hero-card" aria-label="Profile highlights">
+            <div class="mini-list">
+              <div class="mini">
+                <h3>Research focus</h3>
+                <p>Two-phase cooling, heat pipes, additive manufacturing, microchannels, and thermal modeling for electronics and energy systems.</p>
+              </div>
+              <div class="mini">
+                <h3>Scholarly contributions</h3>
+                <p>Peer-reviewed publications, conference presentations, and a U.S. provisional patent.</p>
+              </div>
+              <div class="mini">
+                <h3>Professional service</h3>
+                <p>Contributor as a reviewer for ASME, IEEE, Elsevier journals, and the ITherm conference.</p>
+              </div>
+              <div class="mini">
+                <h3>Research affiliations</h3>
+                <p>Global Cooling Technology Group • Arizona State University</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="summary" class="section">
         <h2>Summary</h2>
         <div class="summary-grid">
           <div class="card">
-            <h3>Research</h3>
+            <h3>Thermal engineering</h3>
             <p>
-              Experimental thermal-fluid systems, thermal modeling, atmospheric water harvesting, and electronics cooling.
+              Experimental thermal-fluid systems, electronics cooling, and thermal modeling for high-power and compact systems.
             </p>
           </div>
           <div class="card">
-            <h3>Programs</h3>
+            <h3>Research translation</h3>
             <p>
-              Federal and state-supported research programs, university research, and industry R&amp;D with measurable technical outcomes.
+              Work connected to prototype development, design optimization, and commercialization activity in thermal and water technologies.
             </p>
           </div>
           <div class="card">
-            <h3>Output</h3>
+            <h3>Documented output</h3>
             <p>
-              Peer-reviewed publications, conference presentations, peer review, and a U.S. provisional patent.
+              Publications, conference presentations, peer review activity, and a patent application related to atmospheric water harvesting.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="research-areas" class="section">
-      <div class="container">
+      <section id="research-areas" class="section">
         <h2>Research Areas</h2>
         <div class="grid">
           <div class="card span-6">
-            <h3>Two-Phase Cooling</h3>
+            <h3>Electronics Cooling</h3>
             <p>
-              Closed-loop pulsating heat pipe systems for high-power electronics cooling, including experimental thermal testing,
-              transport characterization, and development activities through NSF STTR, NSF SBIR, DARPA SBIR, and industry-supported programs.
+              Closed-loop pulsating heat pipe systems, thermal testing, transport characterization, and thermal design for high-power electronics.
+            </p>
+          </div>
+
+          <div class="card span-6">
+            <h3>Heat Pipes &amp; Vapor Chambers</h3>
+            <p>
+              Wick structures, permeability characterization, additively manufactured heat-pipe radiators, and branching thermal hardware.
             </p>
           </div>
 
           <div class="card span-6">
             <h3>Atmospheric Water Harvesting</h3>
             <p>
-              Desiccant-based atmospheric water harvesting systems, including coated desiccants, ultrasound-assisted desorption,
-              thermal regeneration methods, and prototype development through GCWT and AWII-supported activities.
-            </p>
-          </div>
-
-          <div class="card span-6">
-            <h3>Space Thermal Systems</h3>
-            <p>
-              Permeability characterization, wick structures, and additively manufactured heat pipe radiators for space thermal
-              management applications under NASA ESI-supported programs.
+              Desiccant-based systems, coated desiccants, ultrasound-assisted desorption, and thermal regeneration methods.
             </p>
           </div>
 
@@ -351,44 +520,54 @@
           </div>
 
           <div class="card span-6">
-            <h3>Biomedical Diagnostics</h3>
+            <h3>Additive Manufacturing</h3>
             <p>
-              Thermal modeling and experimental validation activities for point-of-care molecular diagnostic systems.
+              Heat exchangers, porous media, wick structures, and fabrication-aware thermal design.
             </p>
           </div>
 
           <div class="card span-6">
-            <h3>Additive Manufacturing</h3>
+            <h3>Biomedical Diagnostics</h3>
             <p>
-              Heat exchangers, wick structures, branching thermal hardware, and fabrication-aware design for manufacturable thermal systems.
+              Thermal modeling and validation activities for point-of-care diagnostic systems.
             </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="federal-programs" class="section">
-      <div class="container">
-        <h2>Federal Programs</h2>
+        <div class="pill-row" style="margin-top:16px;">
+          <span class="pill">Heat Transfer Enhancement</span>
+          <span class="pill">Porous Media</span>
+          <span class="pill">Additive Manufacturing</span>
+          <span class="pill">Heat Pipes</span>
+          <span class="pill">Microchannels</span>
+          <span class="pill">Boiling &amp; Condensation</span>
+        </div>
+      </section>
+
+      <section id="federal-programs" class="section">
+        <h2>Program Contributions</h2>
+        <p class="small-muted">
+          Contributor on research and development activities in thermal management, water security, and space technology areas.
+        </p>
         <div class="grid">
           <div class="card span-4">
             <h3>DARPA SBIR Phase II</h3>
-            <p>Two-phase cooling systems.</p>
+            <p>Contributor on two-phase cooling systems.</p>
           </div>
 
           <div class="card span-4">
             <h3>NSF SBIR Phase II</h3>
-            <p>Micro closed-loop pulsating heat pipe cooling systems.</p>
+            <p>Contributor on pulsating heat pipe cooling systems.</p>
           </div>
 
           <div class="card span-4">
             <h3>NSF STTR Phase I</h3>
-            <p>Two-phase cooling technologies.</p>
+            <p>Contributor on two-phase cooling technologies.</p>
           </div>
 
           <div class="card span-4">
             <h3>NASA Early Stage Innovations</h3>
-            <p>Additively manufactured heat pipe radiators.</p>
+            <p>Contributor on additively manufactured heat pipe radiators.</p>
           </div>
 
           <div class="card span-4">
@@ -397,59 +576,57 @@
           </div>
 
           <div class="card span-4">
-            <h3>Commercialization</h3>
-            <p>Patent-pending atmospheric water harvesting technology and prototype scale-up.</p>
+            <h3>QuantumAtmos</h3>
+            <p>Prototype development and commercialization efforts for atmospheric water harvesting.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="container">
-        <h2>Selected Highlights</h2>
+      <section class="section">
+        <h2>Highlights</h2>
         <div class="grid">
           <div class="card span-4">
-            <h3>Research impact</h3>
-            <p>Atmospheric water harvesting, two-phase cooling, porous media, and thermal system optimization.</p>
+            <h3>Innovation &amp; translation</h3>
+            <p>Patent-pending atmospheric water harvesting technology and prototype development.</p>
           </div>
-
           <div class="card span-4">
-            <h3>Peer review</h3>
-            <p>Completed reviews for ASME, IEEE, Elsevier, and ITherm across thermal management and transport topics.</p>
+            <h3>Scholarly activity</h3>
+            <p>Publications in peer-reviewed journals and presentations at international conferences.</p>
           </div>
-
           <div class="card span-4">
-            <h3>Commercialization</h3>
-            <p>QuantumAtmos, Lab2Launch recognition, patent-pending technology, and prototype development.</p>
+            <h3>Community &amp; service</h3>
+            <p>Contributor as a peer reviewer and member of professional organizations.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="education" class="section">
-      <div class="container">
+      <section id="education" class="section">
         <h2>Education</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div><span class="time">2025</span></div>
-            <div><h3>PhD, Mechanical Engineering — Arizona State University</h3></div>
+            <div>
+              <h3>PhD, Mechanical Engineering — Arizona State University</h3>
+            </div>
           </div>
 
           <div class="timeline-item">
             <div><span class="time">2018</span></div>
-            <div><h3>MS, Mechanical Engineering — Arizona State University</h3></div>
+            <div>
+              <h3>MS, Mechanical Engineering — Arizona State University</h3>
+            </div>
           </div>
 
           <div class="timeline-item">
             <div><span class="time">2016</span></div>
-            <div><h3>B.Tech, Mechanical Engineering — Indian Institute of Technology Madras</h3></div>
+            <div>
+              <h3>B.Tech, Mechanical Engineering — Indian Institute of Technology Madras</h3>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact" class="section">
-      <div class="container">
+      <section id="contact" class="section">
         <h2>Contact</h2>
         <div class="grid">
           <div class="card span-4">
@@ -474,8 +651,8 @@
 
           <div class="card span-8">
             <h3>Keywords</h3>
-            <p class="small">
-              Two-Phase Cooling • Thermal Management • Atmospheric Water Harvesting • Space Thermal Systems • Thermal Modeling • COMSOL • MATLAB • LabVIEW
+            <p class="small-muted">
+              Electronics Cooling • Thermal Management • Atmospheric Water Harvesting • Heat Pipes • Thermal Modeling • COMSOL • MATLAB • LabVIEW
             </p>
           </div>
         </div>
@@ -483,8 +660,8 @@
         <div class="footer-note">
           Research overview and technical profile.
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 </body>
 </html>
