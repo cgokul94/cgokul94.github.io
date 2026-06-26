@@ -3,339 +3,370 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gokul Chandrasekaran — mechanical engineer focused on electronics cooling, thermal-fluid systems, atmospheric water harvesting, and thermal modeling." />
+  <meta name="description" content="Gokul Chandrasekaran — evidence repository for thermal-fluid systems, electronics cooling, atmospheric water harvesting, publications, peer review, and commercialization." />
   <title>Gokul Chandrasekaran</title>
 
   <link rel="stylesheet" href="styles.css" />
 
   <style>
     :root{
-      --bg:#f7f9fc;
+      --bg:#f4f8fc;
       --surface:#ffffff;
-      --surface-2:#f5f8fd;
-      --text:#1d2634;
-      --muted:#637082;
-      --line:#d9e2ef;
+      --surface-2:#f8fbff;
+      --text:#28415f;
+      --muted:#62748a;
+      --line:#d9e4f1;
       --accent:#2456a6;
-      --accent-2:#eaf1fb;
-      --shadow:0 14px 35px rgba(20, 32, 52, .08);
+      --accent-soft:#eaf2ff;
+      --shadow:0 14px 36px rgba(26, 41, 64, .08);
       --radius:24px;
       --max:1180px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
+
+    body{
+      margin:0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: linear-gradient(180deg, #eef4fb 0%, var(--bg) 100%);
       color: var(--text);
       line-height: 1.6;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
 
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:auto;
     }
-    .skip-link:focus {
-      left: 16px;
-      top: 16px;
-      z-index: 1000;
-      background: var(--surface);
-      padding: 10px 14px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
+    .skip-link:focus{
+      left:16px;
+      top:16px;
+      z-index:1000;
+      background:var(--surface);
+      padding:10px 14px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
     }
 
-    .site-header {
+    .site-header{
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(247, 249, 252, 0.94);
+      background: rgba(244, 248, 252, 0.94);
       backdrop-filter: saturate(180%) blur(14px);
-      border-bottom: 1px solid rgba(217, 226, 239, 0.9);
+      border-bottom: 1px solid rgba(217, 228, 241, 0.92);
     }
 
-    .header-inner {
+    .header-inner{
       max-width: var(--max);
       margin: 0 auto;
       padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
       min-height: 72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
     }
 
-    .brand {
+    .brand{
       min-width: 240px;
     }
-    .brand .name {
-      font-size: 1.05rem;
+    .brand .name{
+      font-size: 1.03rem;
       font-weight: 800;
-      line-height: 1.15;
       letter-spacing: -0.01em;
+      line-height: 1.2;
     }
-    .brand .role {
-      font-size: 0.92rem;
-      color: var(--muted);
+    .brand .role{
       margin-top: 3px;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: flex-end;
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
       gap: 6px 10px;
-      min-width: 0;
-      margin-left: auto;
+      margin-left:auto;
     }
-    .nav a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .nav a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
       padding: 8px 10px;
       border-radius: 999px;
       color: var(--text);
       font-weight: 600;
-      font-size: 0.95rem;
-      white-space: nowrap;
+      font-size: 0.93rem;
     }
     .nav a:hover,
-    .nav a[aria-current="page"] {
+    .nav a[aria-current="page"]{
       background: rgba(36, 86, 166, 0.10);
       color: var(--accent);
       text-decoration: none;
     }
 
-    .page {
+    .page{
       max-width: var(--max);
       margin: 0 auto;
       padding: 22px 18px 52px;
     }
 
-    .shell {
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(255,255,255,0.7);
+    .shell{
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(255,255,255,0.72);
       border-radius: 30px;
       box-shadow: var(--shadow);
-      overflow: hidden;
+      overflow:hidden;
     }
 
-    .hero {
+    .hero{
       padding: 34px 30px 28px;
       border-bottom: 1px solid var(--line);
       background:
-        radial-gradient(circle at 88% 22%, rgba(36,86,166,0.12), transparent 26%),
-        radial-gradient(circle at 20% 88%, rgba(36,86,166,0.10), transparent 24%),
+        radial-gradient(circle at 86% 18%, rgba(36,86,166,0.12), transparent 24%),
+        radial-gradient(circle at 14% 86%, rgba(36,86,166,0.08), transparent 22%),
         linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.88));
     }
 
-    .eyebrow {
-      display: inline-block;
+    .eyebrow{
+      display:inline-block;
       padding: 7px 12px;
-      border-radius: 999px;
-      background: var(--accent-2);
+      border-radius:999px;
+      background: var(--accent-soft);
       color: var(--accent);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    .hero-grid {
-      display: grid;
+    .hero-grid{
+      display:grid;
       grid-template-columns: 1.35fr 0.9fr;
       gap: 20px;
       align-items: start;
     }
 
-    h1 {
+    h1{
       margin: 0;
-      max-width: 12ch;
-      font-size: clamp(2.1rem, 4vw, 3.7rem);
-      line-height: 1.03;
+      max-width: 13ch;
+      font-size: clamp(2rem, 4vw, 3.55rem);
+      line-height: 1.02;
       letter-spacing: -0.05em;
+      color: var(--accent);
+      font-weight: 800;
     }
 
-    .subtitle {
-      margin-top: 14px;
+    .subtitle{
+      margin: 14px 0 0;
       max-width: 760px;
       color: var(--muted);
       font-size: 1.02rem;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 20px;
+    }
+
+    .meta-pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #2d4f86;
+      border: 1px solid rgba(36,86,166,0.10);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
       margin-top: 22px;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(36, 86, 166, 0.18);
+      border-radius: 14px;
+      border: 1px solid rgba(36,86,166,0.16);
       background: white;
       color: var(--accent);
       font-weight: 700;
-      font-size: 0.94rem;
-      box-shadow: 0 6px 16px rgba(20, 32, 52, 0.04);
+      font-size: 0.93rem;
+      box-shadow: 0 6px 16px rgba(26, 41, 64, 0.04);
     }
-    .button.primary {
+    .button.primary{
       background: var(--accent);
       color: white;
       border-color: var(--accent);
     }
-    .button:hover {
-      text-decoration: none;
+    .button:hover{
+      text-decoration:none;
       transform: translateY(-1px);
     }
 
-    .hero-card {
-      background: rgba(255,255,255,0.95);
+    .hero-card{
+      background: rgba(255,255,255,0.97);
       border: 1px solid var(--line);
       border-radius: 24px;
       box-shadow: var(--shadow);
       padding: 18px;
     }
 
-    .mini-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .mini {
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
-    }
-    .mini:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-    .mini h3 {
-      margin: 0 0 4px;
-      font-size: 0.98rem;
+    .hero-card h2{
+      margin: 0 0 14px;
+      font-size: 1.05rem;
       color: var(--accent);
     }
-    .mini p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
+
+    .mini-list{
+      display:grid;
+      gap:14px;
     }
 
-    .content {
+    .mini{
+      padding-bottom:14px;
+      border-bottom:1px solid var(--line);
+    }
+    .mini:last-child{
+      padding-bottom:0;
+      border-bottom:0;
+    }
+    .mini h3{
+      margin:0 0 4px;
+      font-size:0.98rem;
+      color: var(--accent);
+    }
+    .mini p{
+      margin:0;
+      color: var(--muted);
+      font-size:0.95rem;
+    }
+
+    .content{
       padding: 26px 30px 36px;
     }
 
-    .section {
+    .section{
       margin-top: 26px;
     }
 
-    .section h2 {
+    .section h2{
       margin: 0 0 12px;
-      font-size: 1.18rem;
+      font-size: 1.16rem;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--line);
+      color: var(--accent);
       letter-spacing: -0.01em;
     }
 
-    .summary-grid {
-      display: grid;
+    .summary-grid{
+      display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .card {
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card{
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 18px;
-      box-shadow: 0 8px 18px rgba(20, 32, 52, 0.04);
+      box-shadow: 0 8px 18px rgba(26, 41, 64, 0.04);
     }
 
-    .card h3 {
+    .card h3{
       margin: 0 0 8px;
       font-size: 1rem;
+      color: var(--text);
     }
-    .card p {
-      margin: 0;
+
+    .card p{
+      margin:0;
       color: var(--muted);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .span-4 { grid-column: span 4; }
-    .span-6 { grid-column: span 6; }
-    .span-8 { grid-column: span 8; }
-    .span-12 { grid-column: span 12; }
+    .span-4{ grid-column: span 4; }
+    .span-6{ grid-column: span 6; }
+    .span-8{ grid-column: span 8; }
+    .span-12{ grid-column: span 12; }
 
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
       gap: 10px;
-      margin-top: 8px;
+      margin-top: 10px;
     }
-    .pill {
-      display: inline-flex;
-      align-items: center;
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
       padding: 8px 12px;
       border-radius: 999px;
-      background: #edf3fb;
-      color: #29435f;
+      background: #edf4ff;
+      color: #34507c;
+      border: 1px solid rgba(36,86,166,0.10);
       font-size: 0.92rem;
       font-weight: 600;
-      border: 1px solid rgba(36,86,166,0.10);
     }
 
-    .timeline {
-      display: grid;
-      gap: 12px;
+    .timeline{
+      display:grid;
+      gap:12px;
     }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 105px 1fr;
+
+    .timeline-item{
+      display:grid;
+      grid-template-columns: 96px 1fr;
       gap: 14px;
-      align-items: start;
+      align-items:start;
       padding: 14px 16px;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 20px;
     }
-    .time {
-      display: inline-block;
+
+    .time{
+      display:inline-block;
       padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--accent-2);
+      border-radius:999px;
+      background: var(--accent-soft);
       color: var(--accent);
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .timeline-item h3 {
+
+    .timeline-item h3{
       margin: 0 0 4px;
       font-size: 1rem;
     }
-    .timeline-item p {
-      margin: 0;
-      color: var(--muted);
-    }
 
-    .footer-note {
+    .footer-note{
       margin-top: 24px;
       padding-top: 16px;
       border-top: 1px solid var(--line);
@@ -343,55 +374,58 @@
       font-size: 13px;
     }
 
-    .small-muted {
+    .small-muted{
       color: var(--muted);
       font-size: 0.94rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 900px){
       .hero,
-      .content {
-        padding-left: 18px;
-        padding-right: 18px;
+      .content{
+        padding-left:18px;
+        padding-right:18px;
       }
       .hero-grid,
-      .summary-grid {
+      .summary-grid{
         grid-template-columns: 1fr;
       }
-      .span-4, .span-6, .span-8, .span-12 {
+      .span-4, .span-6, .span-8, .span-12{
         grid-column: span 12;
       }
-      h1 {
-        max-width: none;
+      h1{
+        max-width:none;
       }
-      .nav {
-        justify-content: flex-start;
+      .nav{
+        justify-content:flex-start;
       }
-      .header-inner {
-        align-items: flex-start;
+      .header-inner{
+        align-items:flex-start;
       }
-      .timeline-item {
+      .timeline-item{
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 560px) {
-      .page {
+    @media (max-width: 560px){
+      .page{
         padding: 12px 10px 24px;
       }
-      .hero {
+      .hero{
         padding-top: 24px;
         padding-bottom: 22px;
       }
-      .hero-card {
-        padding: 16px;
+      .hero-card{
+        padding:16px;
       }
-      .brand .role {
+      .brand .role{
         font-size: 0.86rem;
       }
-      .nav a {
+      .nav a{
         padding: 7px 9px;
         font-size: 0.9rem;
+      }
+      h1{
+        max-width:none;
       }
     }
   </style>
@@ -409,7 +443,7 @@
       <nav class="nav" aria-label="Primary">
         <a href="#summary" aria-current="page">Home</a>
         <a href="#research-areas">Research</a>
-        <a href="#federal-programs">Programs</a>
+        <a href="#evidence">Evidence</a>
         <a href="publications.html">Publications</a>
         <a href="service.html">Service</a>
         <a href="awards.html">Awards</a>
@@ -423,15 +457,27 @@
   <main id="main" class="page">
     <div class="shell">
       <section class="hero">
-        <span class="eyebrow">Research Engineer</span>
+        <span class="eyebrow">Evidence Repository</span>
 
         <div class="hero-grid">
           <div>
-            <h1>Electronics cooling and advanced thermal management systems.</h1>
+            <h1>Thermal Fluid Systems</h1>
             <p class="subtitle">
-              I work in thermal-fluid systems, heat transfer, and technology translation, with experience in two-phase cooling,
-              heat pipes, porous media, additive manufacturing, and atmospheric water harvesting.
+              Heat Pipes • Two-Phase Cooling • Pulsating Heat Pipes • Water Technologies
             </p>
+
+            <p class="subtitle" style="margin-top: 14px;">
+              Research engineer working in experimental thermal-fluid systems with experience in electronics cooling, heat transfer,
+              atmospheric water harvesting, and thermal modeling. My work spans university research, industry R&amp;D, and technology
+              translation through publications, patents, peer review, and collaborative engineering projects.
+            </p>
+
+            <div class="meta-row">
+              <span class="meta-pill">Electronics cooling</span>
+              <span class="meta-pill">Thermal modeling</span>
+              <span class="meta-pill">Additive manufacturing</span>
+              <span class="meta-pill">Atmospheric water harvesting</span>
+            </div>
 
             <div class="actions">
               <a class="button primary" href="publications.html">Publications</a>
@@ -441,23 +487,24 @@
             </div>
           </div>
 
-          <aside class="hero-card" aria-label="Profile highlights">
+          <aside class="hero-card" aria-label="Evidence snapshot">
+            <h2>Evidence Snapshot</h2>
             <div class="mini-list">
               <div class="mini">
-                <h3>Research focus</h3>
-                <p>Two-phase cooling, heat pipes, additive manufacturing, microchannels, and thermal modeling for electronics and energy systems.</p>
-              </div>
-              <div class="mini">
-                <h3>Scholarly contributions</h3>
+                <h3>Scholarly output</h3>
                 <p>Peer-reviewed publications, conference presentations, and a U.S. provisional patent.</p>
               </div>
               <div class="mini">
-                <h3>Professional service</h3>
-                <p>Contributor as a reviewer for ASME, IEEE, Elsevier journals, and the ITherm conference.</p>
+                <h3>Peer review</h3>
+                <p>Completed reviews for ASME, IEEE, Elsevier, and ITherm.</p>
               </div>
               <div class="mini">
-                <h3>Research affiliations</h3>
-                <p>Global Cooling Technology Group • Arizona State University</p>
+                <h3>Collaborative research</h3>
+                <p>Contributor on research activities associated with NASA, NSF, DARPA, and industry projects.</p>
+              </div>
+              <div class="mini">
+                <h3>Commercialization</h3>
+                <p>QuantumAtmos and related prototype development for atmospheric water harvesting.</p>
               </div>
             </div>
           </aside>
@@ -465,25 +512,19 @@
       </section>
 
       <section id="summary" class="section">
-        <h2>Summary</h2>
+        <h2>Overview</h2>
         <div class="summary-grid">
           <div class="card">
-            <h3>Thermal engineering</h3>
-            <p>
-              Experimental thermal-fluid systems, electronics cooling, and thermal modeling for high-power and compact systems.
-            </p>
+            <h3>Research</h3>
+            <p>Experimental thermal-fluid systems, electronics cooling, and thermal modeling.</p>
           </div>
           <div class="card">
-            <h3>Research translation</h3>
-            <p>
-              Work connected to prototype development, design optimization, and commercialization activity in thermal and water technologies.
-            </p>
+            <h3>Translation</h3>
+            <p>Prototype development, design optimization, and commercialization activity in thermal and water technologies.</p>
           </div>
           <div class="card">
-            <h3>Documented output</h3>
-            <p>
-              Publications, conference presentations, peer review activity, and a patent application related to atmospheric water harvesting.
-            </p>
+            <h3>Evidence</h3>
+            <p>Publications, conference presentations, peer review activity, and intellectual property documentation.</p>
           </div>
         </div>
       </section>
@@ -493,61 +534,49 @@
         <div class="grid">
           <div class="card span-6">
             <h3>Electronics Cooling</h3>
-            <p>
-              Closed-loop pulsating heat pipe systems, thermal testing, transport characterization, and thermal design for high-power electronics.
-            </p>
+            <p>Closed-loop pulsating heat pipe systems, thermal testing, and transport characterization for high-power electronics.</p>
           </div>
 
           <div class="card span-6">
             <h3>Heat Pipes &amp; Vapor Chambers</h3>
-            <p>
-              Wick structures, permeability characterization, additively manufactured heat-pipe radiators, and branching thermal hardware.
-            </p>
-          </div>
-
-          <div class="card span-6">
-            <h3>Atmospheric Water Harvesting</h3>
-            <p>
-              Desiccant-based systems, coated desiccants, ultrasound-assisted desorption, and thermal regeneration methods.
-            </p>
+            <p>Wick structures, permeability characterization, and additively manufactured heat-pipe radiators.</p>
           </div>
 
           <div class="card span-6">
             <h3>Thermal Modeling</h3>
-            <p>
-              COMSOL, ANSYS Fluent, MATLAB workflows, and experimental validation for thermal-fluid systems and product optimization.
-            </p>
+            <p>COMSOL, ANSYS Fluent, MATLAB workflows, and experimental validation for thermal-fluid systems.</p>
+          </div>
+
+          <div class="card span-6">
+            <h3>Atmospheric Water Harvesting</h3>
+            <p>Desiccant-based systems, coated desiccants, ultrasound-assisted desorption, and thermal regeneration.</p>
           </div>
 
           <div class="card span-6">
             <h3>Additive Manufacturing</h3>
-            <p>
-              Heat exchangers, porous media, wick structures, and fabrication-aware thermal design.
-            </p>
+            <p>Heat exchangers, porous media, wick structures, and fabrication-aware thermal design.</p>
           </div>
 
           <div class="card span-6">
             <h3>Biomedical Diagnostics</h3>
-            <p>
-              Thermal modeling and validation activities for point-of-care diagnostic systems.
-            </p>
+            <p>Thermal modeling and validation activities for point-of-care molecular diagnostic systems.</p>
           </div>
         </div>
 
-        <div class="pill-row" style="margin-top:16px;">
-          <span class="pill">Heat Transfer Enhancement</span>
+        <div class="pill-row">
+          <span class="pill">Heat Transfer</span>
+          <span class="pill">Two-Phase Flow</span>
           <span class="pill">Porous Media</span>
-          <span class="pill">Additive Manufacturing</span>
-          <span class="pill">Heat Pipes</span>
           <span class="pill">Microchannels</span>
           <span class="pill">Boiling &amp; Condensation</span>
+          <span class="pill">LabVIEW</span>
         </div>
       </section>
 
-      <section id="federal-programs" class="section">
-        <h2>Program Contributions</h2>
+      <section id="evidence" class="section">
+        <h2>Research Contributions</h2>
         <p class="small-muted">
-          Contributor on research and development activities in thermal management, water security, and space technology areas.
+          Contributor on research and development activities associated with the following programs and collaborations.
         </p>
         <div class="grid">
           <div class="card span-4">
@@ -583,19 +612,21 @@
       </section>
 
       <section class="section">
-        <h2>Highlights</h2>
+        <h2>Selected Highlights</h2>
         <div class="grid">
           <div class="card span-4">
-            <h3>Innovation &amp; translation</h3>
+            <h3>Innovation</h3>
             <p>Patent-pending atmospheric water harvesting technology and prototype development.</p>
           </div>
+
           <div class="card span-4">
             <h3>Scholarly activity</h3>
-            <p>Publications in peer-reviewed journals and presentations at international conferences.</p>
+            <p>Peer-reviewed publications and conference presentations in thermal-fluid engineering.</p>
           </div>
+
           <div class="card span-4">
-            <h3>Community &amp; service</h3>
-            <p>Contributor as a peer reviewer and member of professional organizations.</p>
+            <h3>Service</h3>
+            <p>Completed peer reviews for ASME, IEEE, Elsevier, and ITherm.</p>
           </div>
         </div>
       </section>
@@ -605,23 +636,17 @@
         <div class="timeline">
           <div class="timeline-item">
             <div><span class="time">2025</span></div>
-            <div>
-              <h3>PhD, Mechanical Engineering — Arizona State University</h3>
-            </div>
+            <div><h3>PhD, Mechanical Engineering — Arizona State University</h3></div>
           </div>
 
           <div class="timeline-item">
             <div><span class="time">2018</span></div>
-            <div>
-              <h3>MS, Mechanical Engineering — Arizona State University</h3>
-            </div>
+            <div><h3>MS, Mechanical Engineering — Arizona State University</h3></div>
           </div>
 
           <div class="timeline-item">
             <div><span class="time">2016</span></div>
-            <div>
-              <h3>B.Tech, Mechanical Engineering — Indian Institute of Technology Madras</h3>
-            </div>
+            <div><h3>B.Tech, Mechanical Engineering — Indian Institute of Technology Madras</h3></div>
           </div>
         </div>
       </section>
