@@ -5,11 +5,249 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Gokul Chandrasekaran — peer review, professional memberships, and academic service." />
   <title>Professional Service | Gokul Chandrasekaran</title>
+
   <link rel="stylesheet" href="styles.css" />
 
   <style>
     :root{
-      --max: 1160px;
+      --bg:#f4f8fc;
+      --surface:#ffffff;
+      --surface-2:#f8fbff;
+      --text:#29415f;
+      --muted:#64758a;
+      --line:#d9e4f1;
+      --accent:#2456a6;
+      --accent-soft:#eaf2ff;
+      --shadow:0 14px 36px rgba(26, 41, 64, .08);
+      --radius:24px;
+      --max:1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eef4fb 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:auto;
+    }
+    .skip-link:focus{
+      left:16px;
+      top:16px;
+      z-index:1000;
+      background:var(--surface);
+      padding:10px 14px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+
+    .site-header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 248, 252, 0.94);
+      backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid rgba(217, 228, 241, 0.92);
+    }
+
+    .header-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 22px;
+      min-height: 72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      min-width: 260px;
+    }
+    .brand .name{
+      font-size: 1.03rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .brand .role{
+      margin-top: 3px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+      gap: 6px 10px;
+      margin-left:auto;
+    }
+    .nav a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+    .nav a:hover,
+    .nav a[aria-current="page"]{
+      background: rgba(36, 86, 166, 0.10);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .page{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 18px 52px;
+    }
+
+    .shell{
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding: 34px 30px 28px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 84% 18%, rgba(36,86,166,0.10), transparent 24%),
+        radial-gradient(circle at 14% 86%, rgba(36,86,166,0.08), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.88));
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding: 7px 12px;
+      border-radius:999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    h1{
+      margin: 0;
+      max-width: 13ch;
+      font-size: clamp(2rem, 4vw, 3.45rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .subtitle{
+      margin: 14px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 22px;
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(36,86,166,0.16);
+      background: white;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.93rem;
+      box-shadow: 0 6px 16px rgba(26, 41, 64, 0.04);
+    }
+    .button.primary{
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .button:hover{
+      text-decoration:none;
+      transform: translateY(-1px);
+    }
+
+    .hero-card{
+      background: rgba(255,255,255,0.97);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .hero-card h2{
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+      color: var(--accent);
+    }
+
+    .mini-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .mini{
+      padding-bottom:14px;
+      border-bottom:1px solid var(--line);
+    }
+    .mini:last-child{
+      padding-bottom:0;
+      border-bottom:0;
+    }
+    .mini h3{
+      margin:0 0 4px;
+      font-size:0.98rem;
+      color: var(--accent);
+    }
+    .mini p{
+      margin:0;
+      color: var(--muted);
+      font-size:0.95rem;
+    }
+
+    .content{
+      padding: 26px 30px 36px;
+    }
+
+    .section{
+      margin-top: 28px;
     }
 
     .section-inner{
@@ -18,81 +256,49 @@
       padding: 0 10px;
     }
 
-    .page-title{
+    .section h2{
+      margin: 0 0 14px;
+      font-size: 1.16rem;
       color: var(--accent);
-      font-size: 1.02rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: -0.01em;
     }
 
-    .hero-card{
-      background: rgba(255,255,255,0.97);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 22px;
-    }
-
-    .service-grid{
+    .grid{
       display:grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .span-6{ grid-column: span 6; }
-    .span-12{ grid-column: span 12; }
-
-    .section{
-      padding: 22px 0 10px;
-    }
-
-    .section h2{
-      margin: 0 0 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--line);
-      color: var(--accent);
-      font-size: 1.16rem;
-      letter-spacing: -0.01em;
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 8px 18px rgba(26, 41, 64, 0.04);
     }
 
     .card h3{
+      margin: 0 0 8px;
+      font-size: 1rem;
       color: var(--text);
-      margin-bottom: 8px;
     }
 
-    .list{
-      display:grid;
-      gap: 12px;
-    }
-
-    .item{
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: white;
-    }
-
-    .item strong{
-      display:block;
-      margin-bottom: 4px;
-    }
-
-    .meta-line{
+    .card p{
+      margin:0;
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
-    .small-muted{
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
+    .span-4{ grid-column: span 4; }
+    .span-6{ grid-column: span 6; }
+    .span-8{ grid-column: span 8; }
+    .span-12{ grid-column: span 12; }
 
     .pill-row{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
+      gap: 10px;
       margin-top: 12px;
     }
 
@@ -108,9 +314,120 @@
       font-weight: 600;
     }
 
+    .timeline{
+      display:grid;
+      gap:12px;
+    }
+
+    .timeline-item{
+      display:grid;
+      grid-template-columns: 96px 1fr;
+      gap: 14px;
+      align-items:start;
+      padding: 14px 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .time{
+      display:inline-block;
+      padding: 6px 10px;
+      border-radius:999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .timeline-item h3{
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+
+    .footer-note{
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .small-muted{
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:0.96rem;
+    }
+
+    th, td{
+      padding:10px 8px;
+      vertical-align:top;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+    }
+
+    th{
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .table-wrap{
+      overflow-x:auto;
+    }
+
     @media (max-width: 900px){
-      .span-6, .span-12{
+      .hero,
+      .content{
+        padding-left:18px;
+        padding-right:18px;
+      }
+      .hero-grid{
+        grid-template-columns: 1fr;
+      }
+      .span-4, .span-6, .span-8, .span-12{
         grid-column: span 12;
+      }
+      h1{
+        max-width:none;
+      }
+      .nav{
+        justify-content:flex-start;
+      }
+      .header-inner{
+        align-items:flex-start;
+      }
+      .timeline-item{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px){
+      .page{
+        padding: 12px 10px 24px;
+      }
+      .hero{
+        padding-top: 24px;
+        padding-bottom: 22px;
+      }
+      .hero-card{
+        padding:16px;
+      }
+      .brand .role{
+        font-size: 0.86rem;
+      }
+      .nav a{
+        padding: 7px 9px;
+        font-size: 0.9rem;
+      }
+      h1{
+        max-width:none;
       }
     }
   </style>
@@ -155,6 +472,7 @@
             <div class="actions">
               <a class="button primary" href="index.html#evidence">Evidence Snapshot</a>
               <a class="button" href="publications.html">Publications</a>
+              <a class="button" href="awards.html">Awards</a>
               <a class="button" href="media.html">Media</a>
             </div>
           </div>
@@ -181,50 +499,59 @@
 
       <section class="section">
         <div class="section-inner">
-          <h2>Peer Review Activities</h2>
-          <div class="service-grid">
-            <div class="card span-6">
-              <h3>Journals</h3>
-              <div class="list">
-                <div class="item">
-                  <strong>ASME Journal of Thermal Science and Engineering Applications</strong>
-                  <div class="meta-line">Peer reviewer</div>
-                </div>
-                <div class="item">
-                  <strong>IEEE Transactions on Components, Packaging and Manufacturing Technology (T-CPMT)</strong>
-                  <div class="meta-line">Peer reviewer</div>
-                </div>
-                <div class="item">
-                  <strong>IEEE Electron Devices Magazine</strong>
-                  <div class="meta-line">Peer reviewer</div>
-                </div>
-                <div class="item">
-                  <strong>Ain Shams Engineering Journal</strong>
-                  <div class="meta-line">Peer reviewer; recognition certificate issued for completed reviews</div>
-                </div>
-              </div>
-            </div>
+          <h2>Peer Review Metrics</h2>
 
-            <div class="card span-6">
-              <h3>Conferences</h3>
-              <div class="list">
-                <div class="item">
-                  <strong>IEEE ITherm Conference</strong>
-                  <div class="meta-line">Technical paper review and poster review activity</div>
-                </div>
-                <div class="item">
-                  <strong>ITherm 2026</strong>
-                  <div class="meta-line">Completed paper reviews and poster reviews across thermal management tracks</div>
-                </div>
-              </div>
+          <div class="card table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Venue</th>
+                  <th>Type</th>
+                  <th>Count</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>ITherm Conference</strong></td>
+                  <td>Conference</td>
+                  <td>7</td>
+                  <td>3 paper reviews + 4 poster reviews</td>
+                </tr>
+                <tr>
+                  <td><strong>Ain Shams Engineering Journal</strong></td>
+                  <td>Journal</td>
+                  <td>3</td>
+                  <td>Peer reviewer; recognition certificate issued</td>
+                </tr>
+                <tr>
+                  <td><strong>IEEE Transactions on Components, Packaging and Manufacturing Technology (T-CPMT)</strong></td>
+                  <td>Journal</td>
+                  <td>1</td>
+                  <td>Peer reviewer</td>
+                </tr>
+                <tr>
+                  <td><strong>IEEE Electron Devices Magazine</strong></td>
+                  <td>Journal</td>
+                  <td>1</td>
+                  <td>Peer reviewer</td>
+                </tr>
+                <tr>
+                  <td><strong>ASME Journal of Thermal Science and Engineering Applications</strong></td>
+                  <td>Journal</td>
+                  <td>1</td>
+                  <td>Peer reviewer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-              <div class="pill-row">
-                <span class="pill">Completed reviews</span>
-                <span class="pill">Thermal management</span>
-                <span class="pill">Electronics packaging</span>
-                <span class="pill">Two-phase flow</span>
-              </div>
-            </div>
+          <div class="pill-row">
+            <span class="pill">13+ completed reviews</span>
+            <span class="pill">ASME</span>
+            <span class="pill">IEEE</span>
+            <span class="pill">Elsevier</span>
+            <span class="pill">ITherm</span>
           </div>
         </div>
       </section>
@@ -232,46 +559,81 @@
       <section class="section">
         <div class="section-inner">
           <h2>Professional Memberships</h2>
-          <div class="service-grid">
+          <div class="grid">
             <div class="card span-6">
               <h3>Society memberships</h3>
-              <div class="list">
-                <div class="item">
-                  <strong>American Society of Mechanical Engineers (ASME)</strong>
-                  <div class="meta-line">Member</div>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div><span class="time">ASME</span></div>
+                  <div>
+                    <h3>American Society of Mechanical Engineers</h3>
+                    <p>Member; Member-at-Large, Arizona Section (term begins July 1, 2026).</p>
+                  </div>
                 </div>
-                <div class="item">
-                  <strong>American Society of Thermal and Fluids Engineers (ASTFE)</strong>
-                  <div class="meta-line">Student Committee (2025–2026)</div>
+
+                <div class="timeline-item">
+                  <div><span class="time">ASTFE</span></div>
+                  <div>
+                    <h3>American Society of Thermal and Fluids Engineers</h3>
+                    <p>Student Committee (2025–2026).</p>
+                  </div>
                 </div>
-                <div class="item">
-                  <strong>IEEE Electronics Packaging Society</strong>
-                  <div class="meta-line">Member</div>
+
+                <div class="timeline-item">
+                  <div><span class="time">IEEE EPS</span></div>
+                  <div>
+                    <h3>IEEE Electronics Packaging Society</h3>
+                    <p>Member.</p>
+                  </div>
                 </div>
-                <div class="item">
-                  <strong>International Atmospheric Water Harvesting Association (IAWHA)</strong>
-                  <div class="meta-line">Member</div>
+
+                <div class="timeline-item">
+                  <div><span class="time">IAWHA</span></div>
+                  <div>
+                    <h3>International Atmospheric Water Harvesting Association</h3>
+                    <p>Member.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div class="card span-6">
               <h3>Academic service</h3>
-              <div class="item">
-                <strong>Fulton Academic Integrity Matters (FAIM) Program</strong>
-                <div class="meta-line">Student Representative and Academic Integrity Appeal Hearing Participant (2021–2026)</div>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div><span class="time">FAIM</span></div>
+                  <div>
+                    <h3>Fulton Academic Integrity Matters Program</h3>
+                    <p>Student Representative and Academic Integrity Appeal Hearing Participant (2021–2026).</p>
+                  </div>
+                </div>
               </div>
 
-              <div style="height:12px"></div>
+              <div style="height:14px"></div>
 
               <div class="card" style="background: var(--surface-2);">
                 <h3 style="margin-top:0;">Recognition levels</h3>
-                <div class="list">
-                  <div class="item"><strong>2021–2022</strong><div class="meta-line">Participation</div></div>
-                  <div class="item"><strong>2022–2023</strong><div class="meta-line">Silver</div></div>
-                  <div class="item"><strong>2023–2024</strong><div class="meta-line">Platinum Plus</div></div>
-                  <div class="item"><strong>2024–2025</strong><div class="meta-line">Platinum Plus</div></div>
-                  <div class="item"><strong>2025–2026</strong><div class="meta-line">Gold</div></div>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div><span class="time">2021–2022</span></div>
+                    <div><h3>Participation</h3></div>
+                  </div>
+                  <div class="timeline-item">
+                    <div><span class="time">2022–2023</span></div>
+                    <div><h3>Silver</h3></div>
+                  </div>
+                  <div class="timeline-item">
+                    <div><span class="time">2023–2024</span></div>
+                    <div><h3>Platinum Plus</h3></div>
+                  </div>
+                  <div class="timeline-item">
+                    <div><span class="time">2024–2025</span></div>
+                    <div><h3>Platinum Plus</h3></div>
+                  </div>
+                  <div class="timeline-item">
+                    <div><span class="time">2025–2026</span></div>
+                    <div><h3>Gold</h3></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -284,8 +646,8 @@
           <h2>Service Notes</h2>
           <div class="card">
             <p class="small-muted" style="margin:0;">
-              This page is intended to document peer review, committee participation, and academic service activities in a way that is
-              useful for professional review and immigration evidence.
+              This page documents peer review, society participation, and academic service activities in a way that is organized for
+              professional visibility and immigration evidence.
             </p>
           </div>
         </div>
