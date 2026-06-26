@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gokul Chandrasekaran — evidence repository for thermal-fluid systems, electronics cooling, atmospheric water harvesting, publications, peer review, and commercialization." />
+  <meta name="description" content="Gokul Chandrasekaran — mechanical engineer focused on thermal-fluid systems, electronics cooling, atmospheric water harvesting, and thermal modeling." />
   <title>Gokul Chandrasekaran</title>
-
   <link rel="stylesheet" href="styles.css" />
 
   <style>
@@ -13,14 +12,14 @@
       --bg:#f4f8fc;
       --surface:#ffffff;
       --surface-2:#f8fbff;
-      --text:#28415f;
-      --muted:#62748a;
+      --text:#29415f;
+      --muted:#64758a;
       --line:#d9e4f1;
       --accent:#2456a6;
       --accent-soft:#eaf2ff;
       --shadow:0 14px 36px rgba(26, 41, 64, .08);
       --radius:24px;
-      --max:1180px;
+      --max:1160px;
     }
 
     * { box-sizing: border-box; }
@@ -64,7 +63,7 @@
     .header-inner{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 12px 20px;
+      padding: 12px 22px;
       min-height: 72px;
       display:flex;
       align-items:center;
@@ -74,7 +73,7 @@
     }
 
     .brand{
-      min-width: 240px;
+      min-width: 260px;
     }
     .brand .name{
       font-size: 1.03rem;
@@ -132,7 +131,7 @@
       padding: 34px 30px 28px;
       border-bottom: 1px solid var(--line);
       background:
-        radial-gradient(circle at 86% 18%, rgba(36,86,166,0.12), transparent 24%),
+        radial-gradient(circle at 84% 18%, rgba(36,86,166,0.10), transparent 24%),
         radial-gradient(circle at 14% 86%, rgba(36,86,166,0.08), transparent 22%),
         linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.88));
     }
@@ -160,7 +159,7 @@
     h1{
       margin: 0;
       max-width: 13ch;
-      font-size: clamp(2rem, 4vw, 3.55rem);
+      font-size: clamp(2rem, 4vw, 3.45rem);
       line-height: 1.02;
       letter-spacing: -0.05em;
       color: var(--accent);
@@ -174,23 +173,34 @@
       font-size: 1.02rem;
     }
 
-    .meta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 20px;
+    .current-affiliation{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 760px;
     }
 
-    .meta-pill{
-      display:inline-flex;
-      align-items:center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #2d4f86;
-      border: 1px solid rgba(36,86,166,0.10);
-      font-size: 0.92rem;
-      font-weight: 600;
+    .aff-card{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+    }
+
+    .aff-card .label{
+      display:block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .aff-card .value{
+      font-weight: 700;
+      line-height: 1.35;
     }
 
     .actions{
@@ -266,15 +276,15 @@
     }
 
     .section{
-      margin-top: 26px;
+      margin-top: 28px;
     }
 
     .section h2{
-      margin: 0 0 12px;
+      margin: 0 0 14px;
       font-size: 1.16rem;
+      color: var(--accent);
       padding-bottom: 10px;
       border-bottom: 1px solid var(--line);
-      color: var(--accent);
       letter-spacing: -0.01em;
     }
 
@@ -318,7 +328,7 @@
       display:flex;
       flex-wrap:wrap;
       gap: 10px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     .pill{
@@ -404,6 +414,9 @@
       .timeline-item{
         grid-template-columns: 1fr;
       }
+      .current-affiliation{
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 560px){
@@ -457,7 +470,7 @@
   <main id="main" class="page">
     <div class="shell">
       <section class="hero">
-        <span class="eyebrow">Evidence Repository</span>
+        <span class="eyebrow">Professional Portfolio</span>
 
         <div class="hero-grid">
           <div>
@@ -472,7 +485,26 @@
               translation through publications, patents, peer review, and collaborative engineering projects.
             </p>
 
-            <div class="meta-row">
+            <div class="current-affiliation">
+              <div class="aff-card">
+                <span class="label">Current role</span>
+                <div class="value">Lead, Thermal Engineering</div>
+              </div>
+              <div class="aff-card">
+                <span class="label">Organization</span>
+                <div class="value">Global Cooling Technology Group</div>
+              </div>
+              <div class="aff-card">
+                <span class="label">Current role</span>
+                <div class="value">Postdoctoral Research Scholar</div>
+              </div>
+              <div class="aff-card">
+                <span class="label">Affiliation</span>
+                <div class="value">Arizona State University<br><span style="font-weight:600;color:var(--muted)">Global Center for Water Technology / AWII</span></div>
+              </div>
+            </div>
+
+            <div class="meta-row" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;">
               <span class="meta-pill">Electronics cooling</span>
               <span class="meta-pill">Thermal modeling</span>
               <span class="meta-pill">Additive manufacturing</span>
