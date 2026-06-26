@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gokul Chandrasekaran — publications, conference presentations, and patent information." />
+  <meta name="description" content="Gokul Chandrasekaran — publications, conference presentations, patent information, and manuscripts." />
   <title>Publications | Gokul Chandrasekaran</title>
   <link rel="stylesheet" href="styles.css" />
 
@@ -349,6 +349,26 @@
       font-size: 0.94rem;
     }
 
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 14px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #edf4ff;
+      color: #34507c;
+      border: 1px solid rgba(36,86,166,0.10);
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
     @media (max-width: 900px){
       .hero,
       .content{
@@ -428,13 +448,13 @@
           <div>
             <h1>Publications and patent activity.</h1>
             <p class="subtitle">
-              Journal articles, conference presentations, and intellectual property related to thermal engineering and atmospheric water harvesting.
+              Journal articles, conference presentations, accepted abstracts, manuscripts in review, and patent activity related to thermal engineering, electronics cooling, and atmospheric water harvesting.
             </p>
 
             <div class="actions">
               <a class="button primary" href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
-              <a class="button" href="index.html#contact">Contact</a>
               <a class="button" href="service.html">Service</a>
+              <a class="button" href="awards.html">Awards</a>
             </div>
           </div>
 
@@ -442,15 +462,15 @@
             <h2>Snapshot</h2>
             <div class="mini-list">
               <div class="mini">
-                <h3>Journal articles</h3>
-                <p>Peer-reviewed articles in thermal engineering, heat transfer, and atmospheric water harvesting.</p>
+                <h3>Core outputs</h3>
+                <p>Peer-reviewed journal articles in heat transfer, thermal engineering, and atmospheric water harvesting.</p>
               </div>
               <div class="mini">
-                <h3>Conference presentations</h3>
-                <p>Presentations and accepted abstracts in thermal-fluids and additive manufacturing venues.</p>
+                <h3>Conference work</h3>
+                <p>Presentations and accepted abstracts in thermal-fluid and additive manufacturing venues.</p>
               </div>
               <div class="mini">
-                <h3>Patent</h3>
+                <h3>Intellectual property</h3>
                 <p>U.S. provisional patent pending for ultrasound-enhanced atmospheric water capture.</p>
               </div>
             </div>
@@ -460,19 +480,19 @@
 
       <section class="section">
         <div class="section-inner">
-          <h2>Research Output</h2>
+          <h2>Research Threads</h2>
           <div class="grid">
             <div class="card span-4">
-              <h3>Citations</h3>
-              <p>Google Scholar profile and citation record available online.</p>
+              <h3>Electronics cooling</h3>
+              <p>Heat sinks, two-phase cooling, pulsating heat pipes, and thermal management for high-power systems.</p>
             </div>
             <div class="card span-4">
-              <h3>h-index</h3>
-              <p>Google Scholar metrics available online.</p>
+              <h3>Atmospheric water harvesting</h3>
+              <p>Desiccant-based systems, ultrasound-assisted desorption, and thermal regeneration for arid environments.</p>
             </div>
             <div class="card span-4">
-              <h3>i10-index</h3>
-              <p>Google Scholar metrics available online.</p>
+              <h3>Additive manufacturing</h3>
+              <p>Branching heat pipes, wicks, porous media, and fabrication-aware thermal design.</p>
             </div>
           </div>
         </div>
@@ -486,13 +506,18 @@
               <strong>Ultrasound-Enhanced Desorption for Atmospheric Water Capture</strong>
               <div class="meta-line">U.S. Provisional Patent Application filed May 27, 2025</div>
             </div>
+            <div class="tag-row">
+              <span class="tag">Patent pending</span>
+              <span class="tag">Atmospheric water capture</span>
+              <span class="tag">Energy-efficient regeneration</span>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section">
         <div class="section-inner">
-          <h2>Journal Publications</h2>
+          <h2>Selected Journal Publications</h2>
           <div class="list">
             <div class="item">
               <strong>Assessment of Beaded, Powdered and Coated Desiccants for Atmospheric Water Harvesting in Arid Environments</strong>
@@ -524,10 +549,10 @@
 
       <section class="section">
         <div class="section-inner">
-          <h2>Conference Presentations</h2>
+          <h2>Conference Presentations and Accepted Abstracts</h2>
           <div class="grid">
             <div class="card span-6">
-              <h3>Recent presentations</h3>
+              <h3>Presentations</h3>
               <div class="list">
                 <div class="item">
                   <strong>Desorption Process Enhancement for Atmospheric Water Harvesting Using Ultrasound</strong>
@@ -545,7 +570,7 @@
             </div>
 
             <div class="card span-6">
-              <h3>Accepted abstracts / related presentations</h3>
+              <h3>Accepted abstracts / manuscripts</h3>
               <div class="list">
                 <div class="item">
                   <strong>Leonardo, Murray, and Hack: An Investigation of Flow Uniformity in Nature-inspired Branching Networks</strong>
@@ -563,24 +588,29 @@
             </div>
           </div>
 
-          <div class="pill-row">
-            <span class="pill">Thermal engineering</span>
-            <span class="pill">Atmospheric water harvesting</span>
-            <span class="pill">Additive manufacturing</span>
-            <span class="pill">Heat transfer</span>
+          <div class="tag-row">
+            <span class="tag">Thermal engineering</span>
+            <span class="tag">Atmospheric water harvesting</span>
+            <span class="tag">Additive manufacturing</span>
+            <span class="tag">Heat transfer</span>
           </div>
         </div>
       </section>
 
       <section class="section">
         <div class="section-inner">
-          <h2>Manuscripts Under Review or In Preparation</h2>
-          <div class="card">
-            <div class="list">
+          <h2>Manuscripts in Review / In Preparation</h2>
+          <div class="grid">
+            <div class="card span-6">
+              <h3>Under review</h3>
               <div class="item">
                 <strong>Application of a Thermoelectric Heat Pump to a Desiccant-Based Atmospheric Water Harvester</strong>
                 <div class="meta-line">ASME Journal of Thermal Science and Engineering Applications</div>
               </div>
+            </div>
+
+            <div class="card span-6">
+              <h3>In preparation / recently submitted</h3>
               <div class="item">
                 <strong>Towards Monolithic Branching-Heat-Pipe Radiators Produced with Laser Powder Bed Fusion: Effects of Print Orientation and Surface Oxidation on Wick Performance</strong>
                 <div class="meta-line">Progress in Additive Manufacturing</div>
@@ -592,7 +622,7 @@
 
       <section class="section">
         <div class="section-inner">
-          <h2>Related Links</h2>
+          <h2>Scholar Profile</h2>
           <div class="grid">
             <div class="card span-4">
               <h3>Google Scholar</h3>
@@ -609,7 +639,7 @@
           </div>
 
           <div class="footer-note">
-            Publication details can be refined as new manuscripts, conference records, or accepted papers are added.
+            Publication details can be updated as papers are accepted, published, or submitted.
           </div>
         </div>
       </section>
