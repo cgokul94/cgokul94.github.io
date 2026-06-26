@@ -6,6 +6,193 @@
   <meta name="description" content="Gokul Chandrasekaran — mechanical engineer working in thermal-fluid systems, atmospheric water harvesting, advanced thermal management, and technology commercialization." />
   <title>Gokul Chandrasekaran</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 247, 251, 0.92);
+      backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid rgba(219, 227, 238, 0.9);
+    }
+
+    .header-inner {
+      min-height: 64px;
+      gap: 12px;
+      padding: 10px 0;
+      align-items: center;
+    }
+
+    .brand .name {
+      font-size: 1.02rem;
+      line-height: 1.2;
+    }
+
+    .brand .role {
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .nav {
+      gap: 6px 10px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav a {
+      white-space: nowrap;
+      font-size: 0.9rem;
+      padding: 7px 9px;
+    }
+
+    .hero {
+      padding: 30px 0 18px;
+    }
+
+    .hero-card {
+      padding: 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    h1 {
+      margin: 14px 0 12px;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      font-size: 1.02rem;
+    }
+
+    .intro-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .intro-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .stat-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+      background: var(--surface-2);
+    }
+
+    .stat .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .stat .value {
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .hero-meta {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .section {
+      padding: 18px 0 10px;
+    }
+
+    .section h2 {
+      margin-bottom: 12px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .summary-grid .card {
+      min-height: 100%;
+    }
+
+    .summary-grid .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 22px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .nav {
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 18px;
+      }
+
+      .hero-card {
+        padding: 18px;
+      }
+
+      .brand .role {
+        font-size: 0.86rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -19,11 +206,11 @@
 
       <nav class="nav" aria-label="Primary">
         <a href="#summary" aria-current="page">Home</a>
-        <a href="#research-areas">Research Areas</a>
-        <a href="#federal-programs">Federal Programs</a>
+        <a href="#research-areas">Research</a>
+        <a href="#federal-programs">Programs</a>
         <a href="publications.html">Publications</a>
-        <a href="awards.html">Awards</a>
         <a href="service.html">Service</a>
+        <a href="awards.html">Awards</a>
         <a href="media.html">Media</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -36,72 +223,93 @@
       <div class="container">
         <div class="hero-card">
           <span class="kicker">Research Engineer</span>
-          <h1>Thermal-fluid systems, atmospheric water harvesting, and advanced thermal management.</h1>
 
-          <p class="hero-copy">
-            I work across federally funded research, industry R&amp;D, and technology commercialization in two-phase cooling,
-            heat pipes, porous media, additive manufacturing, and desiccant-based atmospheric water harvesting.
-          </p>
+          <div class="hero-grid">
+            <div>
+              <h1>Thermal-fluid systems, atmospheric water harvesting, and advanced thermal management.</h1>
+              <p class="hero-copy">
+                I work across federally funded research, industry R&amp;D, and technology commercialization in two-phase cooling,
+                heat pipes, porous media, additive manufacturing, and desiccant-based atmospheric water harvesting.
+              </p>
 
-          <div class="hero-meta">
-            <div class="meta">
-              <span class="label">Location</span>
-              <span class="value">Tempe, Arizona</span>
-            </div>
-            <div class="meta">
-              <span class="label">Primary focus</span>
-              <span class="value">Thermal-fluid engineering</span>
-            </div>
-            <div class="meta">
-              <span class="label">Current roles</span>
-              <span class="value">Global Cooling Technology Group / ASU</span>
-            </div>
-            <div class="meta">
-              <span class="label">Work streams</span>
-              <span class="value">Research • Review • Commercialization</span>
-            </div>
-          </div>
+              <div class="hero-meta">
+                <div class="meta">
+                  <span class="label">Location</span>
+                  <span class="value">Tempe, Arizona</span>
+                </div>
+                <div class="meta">
+                  <span class="label">Primary focus</span>
+                  <span class="value">Thermal-fluid engineering</span>
+                </div>
+                <div class="meta">
+                  <span class="label">Current roles</span>
+                  <span class="value">Global Cooling Technology Group / ASU</span>
+                </div>
+                <div class="meta">
+                  <span class="label">Work streams</span>
+                  <span class="value">Research • Review • Commercialization</span>
+                </div>
+              </div>
 
-          <div class="pills">
-            <span class="pill">Two-phase cooling</span>
-            <span class="pill">Atmospheric water harvesting</span>
-            <span class="pill">Heat pipes</span>
-            <span class="pill">Additive manufacturing</span>
-            <span class="pill">Thermal modeling</span>
-            <span class="pill">Commercialization</span>
+              <div class="pills">
+                <span class="pill">Two-phase cooling</span>
+                <span class="pill">Atmospheric water harvesting</span>
+                <span class="pill">Heat pipes</span>
+                <span class="pill">Additive manufacturing</span>
+                <span class="pill">Thermal modeling</span>
+                <span class="pill">Commercialization</span>
+              </div>
+            </div>
+
+            <div class="stat-list">
+              <div class="intro-card">
+                <h2>At a glance</h2>
+                <p>
+                  Focused on thermal systems that move from experiments and modeling into deployable products.
+                </p>
+              </div>
+
+              <div class="stat">
+                <span class="label">Research</span>
+                <div class="value">Two-phase cooling, water harvesting, heat pipe radiators</div>
+              </div>
+
+              <div class="stat">
+                <span class="label">Service</span>
+                <div class="value">13+ completed peer reviews across ASME, IEEE, Elsevier, and ITherm</div>
+              </div>
+
+              <div class="stat">
+                <span class="label">Innovation</span>
+                <div class="value">Patent-pending atmospheric water harvesting technology</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="summary" class="section">
-      <div class="container two-col">
-        <div class="card">
-          <h2>Summary</h2>
-          <p>
-            Mechanical engineer working in experimental thermal-fluid systems, thermal modeling, atmospheric water harvesting,
-            and electronics cooling. My experience spans federal and state-supported research programs, university research,
-            and industry R&amp;D, with outcomes including peer-reviewed publications, conference presentations, peer review,
-            and a U.S. provisional patent.
-          </p>
-          <span class="tag">Federally funded research + industry translation</span>
-        </div>
-
-        <div class="card">
-          <h2>Quick links</h2>
-          <div class="list">
-            <div class="item">
-              <strong><a href="publications.html">Publications &amp; Patent</a></strong>
-              <div class="meta-line">Journal papers, conference presentations, and intellectual property.</div>
-            </div>
-            <div class="item">
-              <strong><a href="service.html">Professional Service</a></strong>
-              <div class="meta-line">Peer review, memberships, and service roles.</div>
-            </div>
-            <div class="item">
-              <strong><a href="media.html">Media &amp; Research Briefs</a></strong>
-              <div class="meta-line">Public coverage, briefs, and technical visibility.</div>
-            </div>
+      <div class="container">
+        <h2>Summary</h2>
+        <div class="summary-grid">
+          <div class="card">
+            <h3>Research</h3>
+            <p>
+              Experimental thermal-fluid systems, thermal modeling, atmospheric water harvesting, and electronics cooling.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Programs</h3>
+            <p>
+              Federal and state-supported research programs, university research, and industry R&amp;D with measurable technical outcomes.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Output</h3>
+            <p>
+              Peer-reviewed publications, conference presentations, peer review, and a U.S. provisional patent.
+            </p>
           </div>
         </div>
       </div>
@@ -114,24 +322,24 @@
           <div class="card span-6">
             <h3>Two-Phase Cooling</h3>
             <p>
-              Research on closed-loop pulsating heat pipe systems for high-power electronics cooling, including experimental thermal
-              testing, transport characterization, and development activities through NSF STTR, NSF SBIR, DARPA SBIR, and industry-supported programs.
+              Closed-loop pulsating heat pipe systems for high-power electronics cooling, including experimental thermal testing,
+              transport characterization, and development activities through NSF STTR, NSF SBIR, DARPA SBIR, and industry-supported programs.
             </p>
           </div>
 
           <div class="card span-6">
             <h3>Atmospheric Water Harvesting</h3>
             <p>
-              Research on desiccant-based atmospheric water harvesting systems, including coated desiccants, ultrasound-assisted
-              desorption, thermal regeneration methods, and prototype development through GCWT and AWII-supported activities.
+              Desiccant-based atmospheric water harvesting systems, including coated desiccants, ultrasound-assisted desorption,
+              thermal regeneration methods, and prototype development through GCWT and AWII-supported activities.
             </p>
           </div>
 
           <div class="card span-6">
             <h3>Space Thermal Systems</h3>
             <p>
-              Research activities involving permeability characterization, wick structures, and additively manufactured heat pipe radiators
-              for space thermal management applications under NASA ESI-supported programs.
+              Permeability characterization, wick structures, and additively manufactured heat pipe radiators for space thermal
+              management applications under NASA ESI-supported programs.
             </p>
           </div>
 
@@ -196,7 +404,7 @@
       </div>
     </section>
 
-    <section id="highlights" class="section">
+    <section class="section">
       <div class="container">
         <h2>Selected Highlights</h2>
         <div class="grid">
@@ -223,30 +431,18 @@
         <h2>Education</h2>
         <div class="timeline">
           <div class="timeline-item">
-            <div>
-              <span class="time">2025</span>
-            </div>
-            <div>
-              <h3>PhD, Mechanical Engineering — Arizona State University</h3>
-            </div>
+            <div><span class="time">2025</span></div>
+            <div><h3>PhD, Mechanical Engineering — Arizona State University</h3></div>
           </div>
 
           <div class="timeline-item">
-            <div>
-              <span class="time">2018</span>
-            </div>
-            <div>
-              <h3>MS, Mechanical Engineering — Arizona State University</h3>
-            </div>
+            <div><span class="time">2018</span></div>
+            <div><h3>MS, Mechanical Engineering — Arizona State University</h3></div>
           </div>
 
           <div class="timeline-item">
-            <div>
-              <span class="time">2016</span>
-            </div>
-            <div>
-              <h3>B.Tech, Mechanical Engineering — Indian Institute of Technology Madras</h3>
-            </div>
+            <div><span class="time">2016</span></div>
+            <div><h3>B.Tech, Mechanical Engineering — Indian Institute of Technology Madras</h3></div>
           </div>
         </div>
       </div>
@@ -283,12 +479,8 @@
             </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="footer">
+        <div class="footer-note">
           Research overview and technical profile.
         </div>
       </div>
