@@ -1,447 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gokul Chandrasekaran — publications, conference presentations, and patent information." />
   <title>Publications | Gokul Chandrasekaran</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
-
-    :root {
-      --bg: #eef2f6;
-      --card: #ffffff;
-      --text: #17212b;
-      --muted: #5f6b78;
-      --line: rgba(23,33,43,0.10);
-      --accent: #173a63;
-      --shadow: 0 14px 36px rgba(23,33,43,0.08);
-      --radius: 14px;
+    :root{
+      --bg:#f4f8fc;
+      --surface:#ffffff;
+      --surface-2:#f8fbff;
+      --text:#29415f;
+      --muted:#64758a;
+      --line:#d9e4f1;
+      --accent:#2456a6;
+      --accent-soft:#eaf2ff;
+      --shadow:0 14px 36px rgba(26, 41, 64, .08);
+      --radius:24px;
+      --max:1160px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eef4fb 0%, var(--bg) 100%);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    .page {
-      max-width: 900px;
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:auto;
+    }
+    .skip-link:focus{
+      left:16px;
+      top:16px;
+      z-index:1000;
+      background:var(--surface);
+      padding:10px 14px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+
+    .site-header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 248, 252, 0.94);
+      backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid rgba(217, 228, 241, 0.92);
+    }
+
+    .header-inner{
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 24px 18px 56px;
+      padding: 12px 22px;
+      min-height: 72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
     }
 
-    .nav {
-      margin-bottom: 18px;
-      font-size: 14px;
+    .brand{
+      min-width: 260px;
     }
-
-    .nav a {
+    .brand .name{
+      font-size: 1.03rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .brand .role{
+      margin-top: 3px;
+      font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+      gap: 6px 10px;
+      margin-left:auto;
+    }
+    .nav a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.93rem;
+    }
+    .nav a:hover,
+    .nav a[aria-current="page"]{
+      background: rgba(36, 86, 166, 0.10);
+      color: var(--accent);
       text-decoration: none;
     }
 
-    .nav a:hover {
+    .page{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 18px 52px;
+    }
+
+    .shell{
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero{
+      padding: 34px 30px 28px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 84% 18%, rgba(36,86,166,0.10), transparent 24%),
+        radial-gradient(circle at 14% 86%, rgba(36,86,166,0.08), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.88));
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding: 7px 12px;
+      border-radius:999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    h1{
+      margin: 0;
+      max-width: 13ch;
+      font-size: clamp(2rem, 4vw, 3.45rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .subtitle{
+      margin: 14px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 22px;
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(36,86,166,0.16);
+      background: white;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.93rem;
+      box-shadow: 0 6px 16px rgba(26, 41, 64, 0.04);
+    }
+    .button.primary{
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .button:hover{
+      text-decoration:none;
+      transform: translateY(-1px);
+    }
+
+    .hero-card{
+      background: rgba(255,255,255,0.97);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .hero-card h2{
+      margin: 0 0 14px;
+      font-size: 1.05rem;
       color: var(--accent);
     }
 
-    .shell {
-      background: rgba(255,255,255,0.92);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.7);
+    .mini-list{
+      display:grid;
+      gap:14px;
     }
 
-    .hero {
-      padding: 34px 30px 24px;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg,
-      rgba(255,255,255,0.96),
-      rgba(255,255,255,0.84));
+    .mini{
+      padding-bottom:14px;
+      border-bottom:1px solid var(--line);
     }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
+    .mini:last-child{
+      padding-bottom:0;
+      border-bottom:0;
     }
-
-    .subtitle {
-      margin-top: 12px;
+    .mini h3{
+      margin:0 0 4px;
+      font-size:0.98rem;
+      color: var(--accent);
+    }
+    .mini p{
+      margin:0;
       color: var(--muted);
-      max-width: 760px;
+      font-size:0.95rem;
     }
 
-    .content {
-      padding: 28px 30px 36px;
+    .content{
+      padding: 26px 30px 36px;
     }
 
-    .section {
+    .section{
       margin-top: 28px;
     }
 
-    .section h2 {
+    .section-inner{
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    .section h2{
       margin: 0 0 14px;
+      font-size: 1.16rem;
+      color: var(--accent);
       padding-bottom: 10px;
       border-bottom: 1px solid var(--line);
-      font-size: 1.25rem;
+      letter-spacing: -0.01em;
     }
 
-    .publication {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
     }
 
-    .publication:last-child {
-      border-bottom: none;
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 8px 18px rgba(26, 41, 64, 0.04);
     }
 
-    .publication-title {
-      font-weight: 600;
+    .card h3{
+      margin: 0 0 8px;
       font-size: 1rem;
+      color: var(--text);
     }
 
-    .publication-meta {
-      margin-top: 6px;
+    .card p{
+      margin:0;
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
-    .publication-links {
-      margin-top: 8px;
+    .span-4{ grid-column: span 4; }
+    .span-6{ grid-column: span 6; }
+    .span-8{ grid-column: span 8; }
+    .span-12{ grid-column: span 12; }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #edf4ff;
+      color: #34507c;
+      border: 1px solid rgba(36,86,166,0.10);
       font-size: 0.92rem;
+      font-weight: 600;
     }
 
-    .publication-links a {
-      color: var(--accent);
-      text-decoration: none;
-      margin-right: 14px;
-    }
-
-    .publication-links a:hover {
-      text-decoration: underline;
-    }
-
-    .footer {
-      margin-top: 28px;
+    .footer-note{
+      margin-top: 24px;
       padding-top: 16px;
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 13px;
     }
 
+    .small-muted{
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .list{
+      display:grid;
+      gap:12px;
+    }
+
+    .item{
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .item strong{
+      display:block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .item .meta-line{
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 900px){
+      .hero,
+      .content{
+        padding-left:18px;
+        padding-right:18px;
+      }
+      .hero-grid{
+        grid-template-columns: 1fr;
+      }
+      .span-4, .span-6, .span-8, .span-12{
+        grid-column: span 12;
+      }
+      h1{
+        max-width:none;
+      }
+      .nav{
+        justify-content:flex-start;
+      }
+      .header-inner{
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width: 560px){
+      .page{
+        padding: 12px 10px 24px;
+      }
+      .hero{
+        padding-top: 24px;
+        padding-bottom: 22px;
+      }
+      .hero-card{
+        padding:16px;
+      }
+      .brand .role{
+        font-size: 0.86rem;
+      }
+      .nav a{
+        padding: 7px 9px;
+        font-size: 0.9rem;
+      }
+      h1{
+        max-width:none;
+      }
+    }
   </style>
-
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="page">
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="name">Gokul Chandrasekaran</div>
+        <div class="role">Mechanical Engineer • Thermal-Fluid Systems • Water &amp; Thermal Technologies</div>
+      </div>
 
-    <div class="nav">
-      <a href="index.html">← Back to Home</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#research-areas">Research</a>
+        <a href="publications.html" aria-current="page">Publications</a>
+        <a href="service.html">Service</a>
+        <a href="awards.html">Awards</a>
+        <a href="media.html">Media</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
+  <main id="main" class="page">
     <div class="shell">
-
-      <header class="hero">
-
-        <h1>Publications and Patents</h1>
-
-        <p class="subtitle">
-          Peer-reviewed journal publications, conference proceedings,
-          and intellectual property activities in thermal-fluid systems,
-          atmospheric water harvesting, and thermal management technologies.
-        </p>
-
-      </header>
-      <main class="content">
-
-<section class="section">
-
-  <h2>Journal Publications</h2>
-
-  <p style="color: var(--muted); font-size: 14px; margin-top: 8px;">
-    Google Scholar: 77 citations • h-index: 4 • i10-index: 3
-  </p>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Assessment of Beaded, Powdered and Coated Desiccants for Atmospheric Water Harvesting in Arid Environments
-    </div>
-
-    <div class="publication-meta">
-      Environments (2025)
-    </div>
-
-    <div class="publication-links">
-
-      <a href="https://doi.org/10.3390/environments12040110"
-         target="_blank"
-         rel="noreferrer">
-
-         DOI: 10.3390/environments12040110
-
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Experimental study of the effects of ultrasound on the heat transfer enhancement in a 3D-printed minichannel heat sink
-    </div>
-
-    <div class="publication-meta">
-      International Journal of Heat and Mass Transfer (2023)
-    </div>
-
-    <div class="publication-links">
-
-      <a href="https://doi.org/10.1016/j.ijheatmasstransfer.2023.124101"
-         target="_blank"
-         rel="noreferrer">
-
-         DOI: 10.1016/j.ijheatmasstransfer.2023.124101
-
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Thermal conductivity of metal-coated polymer foam: Integrated experimental and modeling study
-    </div>
-
-    <div class="publication-meta">
-      International Journal of Thermal Sciences (2021)
-    </div>
-
-    <div class="publication-links">
-
-      <a href="https://doi.org/10.1016/j.ijthermalsci.2021.107045"
-         target="_blank"
-         rel="noreferrer">
-
-         DOI: 10.1016/j.ijthermalsci.2021.107045
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <h2>Conference Proceedings</h2>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Numerical Study of Two-Dimensional Laminar Jet Flow Past a Sudden Expansion
-    </div>
-
-    <div class="publication-meta">
-      CMSAM 2016
-    </div>
-
-    <div class="publication-links">
-
-      <a href="https://doi.org/10.12783/dtcse/cmsam2016/3597"
-         target="_blank"
-         rel="noreferrer">
-
-         DOI: 10.12783/dtcse/cmsam2016/3597
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-<section class="section">
-
-  <h2>Thesis and Dissertation Work</h2>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Flow and Ultrasonically Enhanced Desorption in Complex Media
-    </div>
-
-    <div class="publication-meta">
-      PhD Dissertation — Arizona State University (2025, embargoed)
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      3D Printed Heat Exchangers: Experimental Study
-    </div>
-
-    <div class="publication-meta">
-      MS Thesis — Arizona State University (2018)
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Flow Visualization of 2D Plane Jets
-    </div>
-
-    <div class="publication-meta">
-      B.Tech Thesis — Indian Institute of Technology Madras (2016)
-    </div>
-
-  </div>
-
-</section>
-<section class="section">
-
-  <h2>Conference Presentations and Posters</h2>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      GCTG New Cooling Pulsating Heat Pipe Technology (CLPHP) for Extreme Operating Conditions
-    </div>
-
-    <div class="publication-meta">
-      GOMACTech 2026 — Technical Presentation
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Desorption Process Enhancement for Atmospheric Water Harvesting Using Ultrasound
-    </div>
-
-    <div class="publication-meta">
-      ASTFE TFEC 2026 — Oral Presentation
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Energy Challenges in Developing a Desiccant-Based Atmospheric Water Harvester
-    </div>
-
-    <div class="publication-meta">
-      ASTFE TFEC 2025 — Poster Presentation
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Development of an Ultrasound Driven Desiccant-Based Atmospheric Water Harvester
-    </div>
-
-    <div class="publication-meta">
-      First International Atmospheric Water Harvesting Summit (2024) — Flash Talk and Poster Presentation
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Development of a Desiccant-Based Atmospheric Water Harvester
-    </div>
-
-    <div class="publication-meta">
-      Second International Atmospheric Water Harvesting Summit (2025) — Poster Presentation
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Ultrasound-Enhanced Desorption for Atmospheric Water Harvesting
-    </div>
-
-    <div class="publication-meta">
-      AZ Water Conference 2026 — Technical Presentation
-    </div>
-
-  </div>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Thermoelectric Heat Pump-Enabled Desiccant-Based Atmospheric Water Harvester
-    </div>
-
-    <div class="publication-meta">
-      Third International Atmospheric Water Harvesting Summit (2026) — Technical Presentation
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section">
-
-  <h2>Patent</h2>
-
-  <div class="publication">
-
-    <div class="publication-title">
-      Ultrasound-Enhanced Desorption for Atmospheric Water Capture
-    </div>
-
-    <div class="publication-meta">
-      U.S. Provisional Patent #63/812,456 (2025)
-    </div>
-
-  </div>
-
-</section>
-
-        <div class="footer">
-          Publication list updated periodically.
+      <section class="hero">
+        <span class="eyebrow">Publications &amp; IP</span>
+
+        <div class="hero-grid">
+          <div>
+            <h1>Publications and patent activity.</h1>
+            <p class="subtitle">
+              Journal articles, conference presentations, and intellectual property related to thermal engineering and atmospheric water harvesting.
+            </p>
+
+            <div class="actions">
+              <a class="button primary" href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+              <a class="button" href="index.html#contact">Contact</a>
+              <a class="button" href="service.html">Service</a>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Publications snapshot">
+            <h2>Snapshot</h2>
+            <div class="mini-list">
+              <div class="mini">
+                <h3>Journal articles</h3>
+                <p>Peer-reviewed articles in thermal engineering, heat transfer, and atmospheric water harvesting.</p>
+              </div>
+              <div class="mini">
+                <h3>Conference presentations</h3>
+                <p>Presentations and accepted abstracts in thermal-fluids and additive manufacturing venues.</p>
+              </div>
+              <div class="mini">
+                <h3>Patent</h3>
+                <p>U.S. provisional patent pending for ultrasound-enhanced atmospheric water capture.</p>
+              </div>
+            </div>
+          </aside>
         </div>
+      </section>
 
-      </main>
+      <section class="section">
+        <div class="section-inner">
+          <h2>Research Output</h2>
+          <div class="grid">
+            <div class="card span-4">
+              <h3>Citations</h3>
+              <p>Google Scholar profile and citation record available online.</p>
+            </div>
+            <div class="card span-4">
+              <h3>h-index</h3>
+              <p>Google Scholar metrics available online.</p>
+            </div>
+            <div class="card span-4">
+              <h3>i10-index</h3>
+              <p>Google Scholar metrics available online.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="section">
+        <div class="section-inner">
+          <h2>Patent</h2>
+          <div class="card">
+            <div class="item">
+              <strong>Ultrasound-Enhanced Desorption for Atmospheric Water Capture</strong>
+              <div class="meta-line">U.S. Provisional Patent Application filed May 27, 2025</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2>Journal Publications</h2>
+          <div class="list">
+            <div class="item">
+              <strong>Assessment of Beaded, Powdered and Coated Desiccants for Atmospheric Water Harvesting in Arid Environments</strong>
+              <div class="meta-line">Environments (2025)</div>
+            </div>
+
+            <div class="item">
+              <strong>Experimental study of the effects of ultrasound on the heat transfer enhancement in a 3D-printed minichannel heat sink</strong>
+              <div class="meta-line">International Journal of Heat and Mass Transfer (2023)</div>
+            </div>
+
+            <div class="item">
+              <strong>Thermal conductivity of metal coated polymer foam: Integrated experimental and modeling study</strong>
+              <div class="meta-line">International Journal of Thermal Sciences (2021)</div>
+            </div>
+
+            <div class="item">
+              <strong>3D Printed Heat Exchangers: Experimental Study</strong>
+              <div class="meta-line">Master’s thesis work</div>
+            </div>
+
+            <div class="item">
+              <strong>Numerical Study of Two-Dimensional Laminar Jet Flow Past a Sudden Expansion</strong>
+              <div class="meta-line">Conference paper</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2>Conference Presentations</h2>
+          <div class="grid">
+            <div class="card span-6">
+              <h3>Recent presentations</h3>
+              <div class="list">
+                <div class="item">
+                  <strong>Desorption Process Enhancement for Atmospheric Water Harvesting Using Ultrasound</strong>
+                  <div class="meta-line">ASTFE TFEC 2026 — Oral presentation</div>
+                </div>
+                <div class="item">
+                  <strong>Ultrasound-Enhanced Desorption for Atmospheric Water Harvesting</strong>
+                  <div class="meta-line">AZ Water Conference 2026 — Technical presentation</div>
+                </div>
+                <div class="item">
+                  <strong>GCTG New Cooling Pulsating Heat Pipe Technology (CLPHP) for Extreme Operating Conditions</strong>
+                  <div class="meta-line">GOMACTech 2026 — Technical session listing</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card span-6">
+              <h3>Accepted abstracts / related presentations</h3>
+              <div class="list">
+                <div class="item">
+                  <strong>Leonardo, Murray, and Hack: An Investigation of Flow Uniformity in Nature-inspired Branching Networks</strong>
+                  <div class="meta-line">2026 Annual International Solid Freeform Fabrication Symposium — accepted abstract</div>
+                </div>
+                <div class="item">
+                  <strong>Application of a Thermoelectric Heat Pump to a Desiccant-Based Atmospheric Water Harvester</strong>
+                  <div class="meta-line">Journal submission / author confirmation</div>
+                </div>
+                <div class="item">
+                  <strong>Towards Monolithic Branching-Heat-Pipe Radiators Produced with Laser Powder Bed Fusion</strong>
+                  <div class="meta-line">Manuscript receipt confirmation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">Thermal engineering</span>
+            <span class="pill">Atmospheric water harvesting</span>
+            <span class="pill">Additive manufacturing</span>
+            <span class="pill">Heat transfer</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2>Manuscripts Under Review or In Preparation</h2>
+          <div class="card">
+            <div class="list">
+              <div class="item">
+                <strong>Application of a Thermoelectric Heat Pump to a Desiccant-Based Atmospheric Water Harvester</strong>
+                <div class="meta-line">ASME Journal of Thermal Science and Engineering Applications</div>
+              </div>
+              <div class="item">
+                <strong>Towards Monolithic Branching-Heat-Pipe Radiators Produced with Laser Powder Bed Fusion: Effects of Print Orientation and Surface Oxidation on Wick Performance</strong>
+                <div class="meta-line">Progress in Additive Manufacturing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <h2>Related Links</h2>
+          <div class="grid">
+            <div class="card span-4">
+              <h3>Google Scholar</h3>
+              <p><a href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Open profile</a></p>
+            </div>
+            <div class="card span-4">
+              <h3>Service</h3>
+              <p><a href="service.html">Peer review and service record</a></p>
+            </div>
+            <div class="card span-4">
+              <h3>Home</h3>
+              <p><a href="index.html">Back to overview</a></p>
+            </div>
+          </div>
+
+          <div class="footer-note">
+            Publication details can be refined as new manuscripts, conference records, or accepted papers are added.
+          </div>
+        </div>
+      </section>
     </div>
-
-  </div>
-
+  </main>
 </body>
-
 </html>
