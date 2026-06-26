@@ -127,122 +127,8 @@
       overflow:hidden;
     }
 
-    .hero{
-      padding: 34px 30px 28px;
-      border-bottom: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 84% 18%, rgba(36,86,166,0.10), transparent 24%),
-        radial-gradient(circle at 14% 86%, rgba(36,86,166,0.08), transparent 22%),
-        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.88));
-    }
-
-    .eyebrow{
-      display:inline-block;
-      padding: 7px 12px;
-      border-radius:999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.35fr 0.9fr;
-      gap: 20px;
-      align-items: start;
-    }
-
-    h1{
-      margin: 0;
-      max-width: 13ch;
-      font-size: clamp(2rem, 4vw, 3.45rem);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .subtitle{
-      margin: 14px 0 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 22px;
-    }
-
-    .button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 10px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(36,86,166,0.16);
-      background: white;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.93rem;
-      box-shadow: 0 6px 16px rgba(26, 41, 64, 0.04);
-    }
-    .button.primary{
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-    .button:hover{
-      text-decoration:none;
-      transform: translateY(-1px);
-    }
-
-    .hero-card{
-      background: rgba(255,255,255,0.97);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-
-    .hero-card h2{
-      margin: 0 0 14px;
-      font-size: 1.05rem;
-      color: var(--accent);
-    }
-
-    .mini-list{
-      display:grid;
-      gap:14px;
-    }
-
-    .mini{
-      padding-bottom:14px;
-      border-bottom:1px solid var(--line);
-    }
-    .mini:last-child{
-      padding-bottom:0;
-      border-bottom:0;
-    }
-    .mini h3{
-      margin:0 0 4px;
-      font-size:0.98rem;
-      color: var(--accent);
-    }
-    .mini p{
-      margin:0;
-      color: var(--muted);
-      font-size:0.95rem;
-    }
-
     .content{
-      padding: 26px 30px 36px;
+      padding: 30px 30px 36px;
     }
 
     .section{
@@ -352,7 +238,7 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width: 132px;
+      min-width: 140px;
       padding: 7px 12px;
       border-radius: 999px;
       background: #edf4ff;
@@ -361,22 +247,24 @@
       font-size: 0.92rem;
       font-weight: 700;
       white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .item-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:nowrap;
     }
 
     @media (max-width: 900px){
-      .hero,
       .content{
         padding-left:18px;
         padding-right:18px;
       }
-      .hero-grid{
-        grid-template-columns: 1fr;
-      }
       .span-4, .span-6, .span-8, .span-12{
         grid-column: span 12;
-      }
-      h1{
-        max-width:none;
       }
       .nav{
         justify-content:flex-start;
@@ -390,10 +278,6 @@
       .page{
         padding: 12px 10px 24px;
       }
-      .hero{
-        padding-top: 24px;
-        padding-bottom: 22px;
-      }
       .hero-card{
         padding:16px;
       }
@@ -404,11 +288,11 @@
         padding: 7px 9px;
         font-size: 0.9rem;
       }
-      h1{
-        max-width:none;
-      }
       .level{
-        min-width: 140px;
+        min-width: 146px;
+      }
+      .item-row{
+        gap:10px;
       }
     }
   </style>
@@ -438,136 +322,145 @@
 
   <main id="main" class="page">
     <div class="shell">
-      <section class="hero">
-        <span class="eyebrow">Professional Service</span>
+      <div class="content">
+        <section class="section">
+          <div class="section-inner">
+            <h2>Peer Review Activities</h2>
+
+            <div class="card table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Venue</th>
+                    <th>Type</th>
+                    <th>Count</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>ITherm Conference</strong></td>
+                    <td>Conference</td>
+                    <td>7</td>
+                    <td>3 paper reviews + 4 poster reviews</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ain Shams Engineering Journal</strong></td>
+                    <td>Journal</td>
+                    <td>3</td>
+                    <td>Peer reviewer</td>
+                  </tr>
+                  <tr>
+                    <td><strong>IEEE Transactions on Components, Packaging and Manufacturing Technology (T-CPMT)</strong></td>
+                    <td>Journal</td>
+                    <td>1</td>
+                    <td>Peer reviewer</td>
+                  </tr>
+                  <tr>
+                    <td><strong>IEEE Electron Devices Magazine</strong></td>
+                    <td>Journal</td>
+                    <td>1</td>
+                    <td>Peer reviewer</td>
+                  </tr>
+                  <tr>
+                    <td><strong>ASME Journal of Thermal Science and Engineering Applications</strong></td>
+                    <td>Journal</td>
+                    <td>1</td>
+                    <td>Peer reviewer</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="pill-row">
+              <span class="pill">13+ completed reviews</span>
+            </div>
+          </div>
+        </section>
 
         <section class="section">
-        <div class="section-inner">
-          <h2>Peer Review Activities</h2>
+          <div class="section-inner">
+            <h2>Professional Society Memberships</h2>
+            <div class="grid">
+              <div class="card span-6">
+                <h3>Society memberships</h3>
+                <div class="grid" style="grid-template-columns:1fr; gap:12px;">
+                  <div class="card" style="background: var(--surface-2);">
+                    <h3 style="margin-top:0;">American Society of Mechanical Engineers (ASME)</h3>
+                    <p>Member; Member-at-Large, Arizona Section (term begins July 1, 2026).</p>
+                  </div>
 
-          <div class="card table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Venue</th>
-                  <th>Type</th>
-                  <th>Count</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>ITherm Conference</strong></td>
-                  <td>Conference</td>
-                  <td>7</td>
-                  <td>3 paper reviews + 4 poster reviews</td>
-                </tr>
-                <tr>
-                  <td><strong>Ain Shams Engineering Journal</strong></td>
-                  <td>Journal</td>
-                  <td>3</td>
-                  <td>Peer reviewer</td>
-                </tr>
-                <tr>
-                  <td><strong>IEEE Transactions on Components, Packaging and Manufacturing Technology (T-CPMT)</strong></td>
-                  <td>Journal</td>
-                  <td>1</td>
-                  <td>Peer reviewer</td>
-                </tr>
-                <tr>
-                  <td><strong>IEEE Electron Devices Magazine</strong></td>
-                  <td>Journal</td>
-                  <td>1</td>
-                  <td>Peer reviewer</td>
-                </tr>
-                <tr>
-                  <td><strong>ASME Journal of Thermal Science and Engineering Applications</strong></td>
-                  <td>Journal</td>
-                  <td>1</td>
-                  <td>Peer reviewer</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                  <div class="card" style="background: var(--surface-2);">
+                    <h3 style="margin-top:0;">American Society of Thermal and Fluids Engineers (ASTFE)</h3>
+                    <p>Student Committee (2025–2026).</p>
+                  </div>
 
-          <div class="pill-row">
-            <span class="pill">13+ completed reviews</span>
-          </div>
-        </div>
-      </section>
+                  <div class="card" style="background: var(--surface-2);">
+                    <h3 style="margin-top:0;">IEEE Electronics Packaging Society</h3>
+                    <p>Member.</p>
+                  </div>
 
-      <section class="section">
-        <div class="section-inner">
-          <h2>Professional Society Memberships</h2>
-          <div class="grid">
-            <div class="card span-6">
-              <h3>Society memberships</h3>
-              <div class="grid" style="grid-template-columns:1fr; gap:12px;">
+                  <div class="card" style="background: var(--surface-2);">
+                    <h3 style="margin-top:0;">International Atmospheric Water Harvesting Association (IAWHA)</h3>
+                    <p>Member.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card span-6">
+                <h3>University service</h3>
                 <div class="card" style="background: var(--surface-2);">
-                  <h3 style="margin-top:0;">American Society of Mechanical Engineers (ASME)</h3>
-                  <p>Member; Member-at-Large, Arizona Section (term begins July 1, 2026).</p>
+                  <h3 style="margin-top:0;">Fulton Academic Integrity Matters (FAIM) Program</h3>
+                  <p>Student Representative and Academic Integrity Appeal Hearing Participant (2021–2026).</p>
                 </div>
 
-                <div class="card" style="background: var(--surface-2);">
-                  <h3 style="margin-top:0;">American Society of Thermal and Fluids Engineers (ASTFE)</h3>
-                  <p>Student Committee (2025–2026).</p>
-                </div>
+                <div style="height:14px"></div>
 
                 <div class="card" style="background: var(--surface-2);">
-                  <h3 style="margin-top:0;">IEEE Electronics Packaging Society</h3>
-                  <p>Member.</p>
-                </div>
+                  <h3 style="margin-top:0;">FAIM Annual Recognition Levels</h3>
 
-                <div class="card" style="background: var(--surface-2);">
-                  <h3 style="margin-top:0;">International Atmospheric Water Harvesting Association (IAWHA)</h3>
-                  <p>Member.</p>
+                  <div class="grid" style="grid-template-columns:1fr; gap:10px;">
+                    <div class="card" style="background: var(--surface-2);">
+                      <div class="item-row">
+                        <span class="level">2025–2026</span>
+                        <strong>Gold</strong>
+                      </div>
+                    </div>
+
+                    <div class="card" style="background: var(--surface-2);">
+                      <div class="item-row">
+                        <span class="level">2024–2025</span>
+                        <strong>Platinum Plus</strong>
+                      </div>
+                    </div>
+
+                    <div class="card" style="background: var(--surface-2);">
+                      <div class="item-row">
+                        <span class="level">2023–2024</span>
+                        <strong>Platinum Plus</strong>
+                      </div>
+                    </div>
+
+                    <div class="card" style="background: var(--surface-2);">
+                      <div class="item-row">
+                        <span class="level">2022–2023</span>
+                        <strong>Silver</strong>
+                      </div>
+                    </div>
+
+                    <div class="card" style="background: var(--surface-2);">
+                      <div class="item-row">
+                        <span class="level">2021–2022</span>
+                        <strong>Participation</strong>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="card span-6">
-              <h3>University service</h3>
-              <div class="card" style="background: var(--surface-2);">
-                <h3 style="margin-top:0;">Fulton Academic Integrity Matters (FAIM) Program</h3>
-                <p>Student Representative and Academic Integrity Appeal Hearing Participant (2021–2026).</p>
-              </div>
-<div class="card" style="background: var(--surface-2);">
-  <h3 style="margin-top:0;">FAIM Annual Recognition Levels</h3>
-
-  <div class="list">
-
-    <div class="item" style="display:flex;justify-content:space-between;align-items:center;">
-      <span class="time">2025–2026</span>
-      <strong>Gold</strong>
-    </div>
-
-    <div class="item" style="display:flex;justify-content:space-between;align-items:center;">
-      <span class="time">2024–2025</span>
-      <strong>Platinum Plus</strong>
-    </div>
-
-    <div class="item" style="display:flex;justify-content:space-between;align-items:center;">
-      <span class="time">2023–2024</span>
-      <strong>Platinum Plus</strong>
-    </div>
-
-    <div class="item" style="display:flex;justify-content:space-between;align-items:center;">
-      <span class="time">2022–2023</span>
-      <strong>Silver</strong>
-    </div>
-
-    <div class="item" style="display:flex;justify-content:space-between;align-items:center;">
-      <span class="time">2021–2022</span>
-      <strong>Participation</strong>
-    </div>
-
-  </div>
-</div>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </main>
 </body>
