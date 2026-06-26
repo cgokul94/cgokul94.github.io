@@ -266,6 +266,28 @@
 
     .small-muted{ color: var(--muted); font-size: 0.94rem; }
 
+    .status{
+      display:inline-flex;
+      align-items:center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #edf4ff;
+      color: #34507c;
+      border: 1px solid rgba(36,86,166,0.10);
+      font-size: 0.88rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .portfolio-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom: 6px;
+    }
+
     @media (max-width: 900px){
       .content{ padding-left:18px; padding-right:18px; }
       .span-4, .span-6, .span-8, .span-12{ grid-column: span 12; }
@@ -372,63 +394,15 @@
 
             <div class="grid" style="margin-top:14px;">
               <article class="card span-12">
-                <div class="pill-row" style="margin-top:0;">
-                  <span class="pill">Experimental Thermal Engineering</span>
-                  <span class="pill">2016–2018</span>
-                  <span class="pill">Arizona State University</span>
-                </div>
-                <h3 style="margin-top: 12px;">Experimental Thermal Engineering</h3>
-                <p class="small-muted"><strong>Engineering challenge:</strong> Use additive manufacturing to improve thermal management through experimentally characterized heat exchanger designs.</p>
-                <div class="grid" style="margin-top:14px;">
-                  <div class="card span-6" style="background: var(--surface-2);">
-                    <h3 style="margin-top:0;">Experimental platform</h3>
-                    <p class="small-muted">Additively manufactured heat exchanger test platform developed for master’s research.</p>
+                <div class="portfolio-head">
+                  <div>
+                    <div class="pill-row" style="margin-top:0;">
+                      <span class="pill">Electronics Cooling</span>
+                    </div>
+                    <h3 style="margin-top: 12px;">Electronics Cooling (GCTG)</h3>
                   </div>
-                  <div class="card span-6" style="background: var(--surface-2);">
-                    <h3 style="margin-top:0;">Representative output</h3>
-                    <p class="small-muted">Master’s thesis on 3D printed heat exchangers.</p>
-                  </div>
+                  <span class="status">Current</span>
                 </div>
-                <div class="pill-row">
-                  <span class="pill">Additive manufacturing</span>
-                  <span class="pill">Heat exchangers</span>
-                  <span class="pill">Thermal characterization</span>
-                </div>
-              </article>
-
-              <article class="card span-12">
-                <div class="pill-row" style="margin-top:0;">
-                  <span class="pill">Advanced Thermal Materials</span>
-                  <span class="pill">2018–2019</span>
-                  <span class="pill">Arizona State University</span>
-                </div>
-                <h3 style="margin-top: 12px;">Advanced Thermal Materials</h3>
-                <p class="small-muted"><strong>Engineering challenge:</strong> Understand how porous and coated materials affect thermal conductivity and electronics cooling performance.</p>
-                <div class="grid" style="margin-top:14px;">
-                  <div class="card span-6" style="background: var(--surface-2);">
-                    <h3 style="margin-top:0;">Experimental platform</h3>
-                    <p class="small-muted">TPS thermal conductivity characterization platform for polymer foams and coated foams.</p>
-                  </div>
-                  <div class="card span-6" style="background: var(--surface-2);">
-                    <h3 style="margin-top:0;">Representative outputs</h3>
-                    <p class="small-muted">IJTS, ITherm heat sink design challenge, ASU News, 3D Printing Industry, and VoxelMatters.</p>
-                  </div>
-                </div>
-                <div class="pill-row">
-                  <span class="pill">TPS</span>
-                  <span class="pill">Porous media</span>
-                  <span class="pill">Thermal conductivity</span>
-                  <span class="pill">Electronics cooling</span>
-                </div>
-              </article>
-
-              <article class="card span-12">
-                <div class="pill-row" style="margin-top:0;">
-                  <span class="pill">Electronics Cooling</span>
-                  <span class="pill">2022–Present</span>
-                  <span class="pill">Global Cooling Technology Group</span>
-                </div>
-                <h3 style="margin-top: 12px;">Electronics Cooling (GCTG)</h3>
                 <p class="small-muted"><strong>Engineering challenge:</strong> Validate pulsating heat pipe systems and other thermal management technologies for high-power electronics applications.</p>
                 <div class="grid" style="margin-top:14px;">
                   <div class="card span-6" style="background: var(--surface-2);">
@@ -449,12 +423,44 @@
               </article>
 
               <article class="card span-12">
-                <div class="pill-row" style="margin-top:0;">
-                  <span class="pill">NASA Heat Pipe Technologies</span>
-                  <span class="pill">2022–2025</span>
-                  <span class="pill">Arizona State University</span>
+                <div class="portfolio-head">
+                  <div>
+                    <div class="pill-row" style="margin-top:0;">
+                      <span class="pill">Atmospheric Water Harvesting</span>
+                    </div>
+                    <h3 style="margin-top: 12px;">Atmospheric Water Harvesting</h3>
+                  </div>
+                  <span class="status">Current</span>
                 </div>
-                <h3 style="margin-top: 12px;">NASA Heat Pipe Technologies</h3>
+                <p class="small-muted"><strong>Engineering challenge:</strong> Reduce the energy required to regenerate desiccants for atmospheric water harvesting in low-humidity environments.</p>
+                <div class="grid" style="margin-top:14px;">
+                  <div class="card span-6" style="background: var(--surface-2);">
+                    <h3 style="margin-top:0;">Experimental platforms</h3>
+                    <p class="small-muted">Desiccant assessment platform, ultrasound-enhanced desorption platform, and thermoelectric AWH platform.</p>
+                  </div>
+                  <div class="card span-6" style="background: var(--surface-2);">
+                    <h3 style="margin-top:0;">Representative outputs</h3>
+                    <p class="small-muted">Environments paper, dissertation chapter 5, provisional patent, TSEA manuscript, and current postdoctoral research.</p>
+                  </div>
+                </div>
+                <div class="pill-row">
+                  <span class="pill">Desiccants</span>
+                  <span class="pill">Ultrasound</span>
+                  <span class="pill">Thermoelectrics</span>
+                  <span class="pill">Commercialization</span>
+                </div>
+              </article>
+
+              <article class="card span-12">
+                <div class="portfolio-head">
+                  <div>
+                    <div class="pill-row" style="margin-top:0;">
+                      <span class="pill">NASA Heat Pipe Technologies</span>
+                    </div>
+                    <h3 style="margin-top: 12px;">NASA Heat Pipe Technologies</h3>
+                  </div>
+                  <span class="status">Completed</span>
+                </div>
                 <p class="small-muted"><strong>Engineering challenge:</strong> Characterize permeability in additively manufactured wick structures for advanced heat pipe applications.</p>
                 <div class="grid" style="margin-top:14px;">
                   <div class="card span-6" style="background: var(--surface-2);">
@@ -475,28 +481,59 @@
               </article>
 
               <article class="card span-12">
-                <div class="pill-row" style="margin-top:0;">
-                  <span class="pill">Atmospheric Water Harvesting</span>
-                  <span class="pill">2023–Present</span>
-                  <span class="pill">GCWT / AWII</span>
+                <div class="portfolio-head">
+                  <div>
+                    <div class="pill-row" style="margin-top:0;">
+                      <span class="pill">Advanced Thermal Materials</span>
+                    </div>
+                    <h3 style="margin-top: 12px;">Advanced Thermal Materials</h3>
+                  </div>
+                  <span class="status">Completed</span>
                 </div>
-                <h3 style="margin-top: 12px;">Atmospheric Water Harvesting</h3>
-                <p class="small-muted"><strong>Engineering challenge:</strong> Reduce the energy required to regenerate desiccants for atmospheric water harvesting in low-humidity environments.</p>
+                <p class="small-muted"><strong>Engineering challenge:</strong> Understand how porous and coated materials affect thermal conductivity and electronics cooling performance.</p>
                 <div class="grid" style="margin-top:14px;">
                   <div class="card span-6" style="background: var(--surface-2);">
-                    <h3 style="margin-top:0;">Experimental platforms</h3>
-                    <p class="small-muted">Desiccant assessment platform, ultrasound-enhanced desorption platform, and thermoelectric AWH platform.</p>
+                    <h3 style="margin-top:0;">Experimental platform</h3>
+                    <p class="small-muted">TPS thermal conductivity characterization platform for polymer foams and coated foams.</p>
                   </div>
                   <div class="card span-6" style="background: var(--surface-2);">
                     <h3 style="margin-top:0;">Representative outputs</h3>
-                    <p class="small-muted">Environments paper, dissertation chapter 5, provisional patent, TSEA manuscript, and current postdoctoral research.</p>
+                    <p class="small-muted">IJTS, ITherm heat sink design challenge, ASU News, 3D Printing Industry, and VoxelMatters.</p>
                   </div>
                 </div>
                 <div class="pill-row">
-                  <span class="pill">Desiccants</span>
-                  <span class="pill">Ultrasound</span>
-                  <span class="pill">Thermoelectrics</span>
-                  <span class="pill">Commercialization</span>
+                  <span class="pill">TPS</span>
+                  <span class="pill">Porous media</span>
+                  <span class="pill">Thermal conductivity</span>
+                  <span class="pill">Electronics cooling</span>
+                </div>
+              </article>
+
+              <article class="card span-12">
+                <div class="portfolio-head">
+                  <div>
+                    <div class="pill-row" style="margin-top:0;">
+                      <span class="pill">Experimental Thermal Engineering</span>
+                    </div>
+                    <h3 style="margin-top: 12px;">Experimental Thermal Engineering</h3>
+                  </div>
+                  <span class="status">Foundation</span>
+                </div>
+                <p class="small-muted"><strong>Engineering challenge:</strong> Use additive manufacturing to improve thermal management through experimentally characterized heat exchanger designs.</p>
+                <div class="grid" style="margin-top:14px;">
+                  <div class="card span-6" style="background: var(--surface-2);">
+                    <h3 style="margin-top:0;">Experimental platform</h3>
+                    <p class="small-muted">Additively manufactured heat exchanger test platform developed for master’s research.</p>
+                  </div>
+                  <div class="card span-6" style="background: var(--surface-2);">
+                    <h3 style="margin-top:0;">Representative output</h3>
+                    <p class="small-muted">Master’s thesis on 3D printed heat exchangers.</p>
+                  </div>
+                </div>
+                <div class="pill-row">
+                  <span class="pill">Additive manufacturing</span>
+                  <span class="pill">Heat exchangers</span>
+                  <span class="pill">Thermal characterization</span>
                 </div>
               </article>
             </div>
