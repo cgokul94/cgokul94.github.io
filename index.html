@@ -21,7 +21,22 @@
       --radius:24px;
       --max:1160px;
     }
+.section-inner{
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
 
+.section-inner .summary-grid,
+.section-inner .grid,
+.section-inner .timeline{
+  gap: 16px;
+}
+
+.section-inner .card,
+.section-inner .timeline-item{
+  border-radius: 20px;
+}
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
@@ -543,181 +558,193 @@
         </div>
       </section>
 
-      <section id="summary" class="section">
-        <h2>Overview</h2>
-        <div class="summary-grid">
-          <div class="card">
-            <h3>Research</h3>
-            <p>Experimental thermal-fluid systems, electronics cooling, and thermal modeling.</p>
-          </div>
-          <div class="card">
-            <h3>Translation</h3>
-            <p>Prototype development, design optimization, and commercialization activity in thermal and water technologies.</p>
-          </div>
-          <div class="card">
-            <h3>Evidence</h3>
-            <p>Publications, conference presentations, peer review activity, and intellectual property documentation.</p>
-          </div>
-        </div>
-      </section>
+   <section id="summary" class="section">
+  <div class="section-inner">
+    <h2>Overview</h2>
+    <div class="summary-grid">
+      <div class="card">
+        <h3>Research</h3>
+        <p>Experimental thermal-fluid systems, electronics cooling, and thermal modeling.</p>
+      </div>
+      <div class="card">
+        <h3>Translation</h3>
+        <p>Prototype development, design optimization, and commercialization activity in thermal and water technologies.</p>
+      </div>
+      <div class="card">
+        <h3>Evidence</h3>
+        <p>Publications, conference presentations, peer review activity, and intellectual property documentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <section id="research-areas" class="section">
-        <h2>Research Areas</h2>
-        <div class="grid">
-          <div class="card span-6">
-            <h3>Electronics Cooling</h3>
-            <p>Closed-loop pulsating heat pipe systems, thermal testing, and transport characterization for high-power electronics.</p>
-          </div>
+<section id="research-areas" class="section">
+  <div class="section-inner">
+    <h2>Research Areas</h2>
+    <div class="grid">
+      <div class="card span-6">
+        <h3>Electronics Cooling</h3>
+        <p>Closed-loop pulsating heat pipe systems, thermal testing, and transport characterization for high-power electronics.</p>
+      </div>
 
-          <div class="card span-6">
-            <h3>Heat Pipes &amp; Vapor Chambers</h3>
-            <p>Wick structures, permeability characterization, and additively manufactured heat-pipe radiators.</p>
-          </div>
+      <div class="card span-6">
+        <h3>Heat Pipes &amp; Vapor Chambers</h3>
+        <p>Wick structures, permeability characterization, and additively manufactured heat-pipe radiators.</p>
+      </div>
 
-          <div class="card span-6">
-            <h3>Thermal Modeling</h3>
-            <p>COMSOL, ANSYS Fluent, MATLAB workflows, and experimental validation for thermal-fluid systems.</p>
-          </div>
+      <div class="card span-6">
+        <h3>Thermal Modeling</h3>
+        <p>COMSOL, ANSYS Fluent, MATLAB workflows, and experimental validation for thermal-fluid systems.</p>
+      </div>
 
-          <div class="card span-6">
-            <h3>Atmospheric Water Harvesting</h3>
-            <p>Desiccant-based systems, coated desiccants, ultrasound-assisted desorption, and thermal regeneration.</p>
-          </div>
+      <div class="card span-6">
+        <h3>Atmospheric Water Harvesting</h3>
+        <p>Desiccant-based systems, coated desiccants, ultrasound-assisted desorption, and thermal regeneration.</p>
+      </div>
 
-          <div class="card span-6">
-            <h3>Additive Manufacturing</h3>
-            <p>Heat exchangers, porous media, wick structures, and fabrication-aware thermal design.</p>
-          </div>
+      <div class="card span-6">
+        <h3>Additive Manufacturing</h3>
+        <p>Heat exchangers, porous media, wick structures, and fabrication-aware thermal design.</p>
+      </div>
 
-          <div class="card span-6">
-            <h3>Biomedical Diagnostics</h3>
-            <p>Thermal modeling and validation activities for point-of-care molecular diagnostic systems.</p>
-          </div>
-        </div>
+      <div class="card span-6">
+        <h3>Biomedical Diagnostics</h3>
+        <p>Thermal modeling and validation activities for point-of-care molecular diagnostic systems.</p>
+      </div>
+    </div>
 
-        <div class="pill-row">
-          <span class="pill">Heat Transfer</span>
-          <span class="pill">Two-Phase Flow</span>
-          <span class="pill">Porous Media</span>
-          <span class="pill">Microchannels</span>
-          <span class="pill">Boiling &amp; Condensation</span>
-          <span class="pill">LabVIEW</span>
-        </div>
-      </section>
+    <div class="pill-row">
+      <span class="pill">Heat Transfer</span>
+      <span class="pill">Two-Phase Flow</span>
+      <span class="pill">Porous Media</span>
+      <span class="pill">Microchannels</span>
+      <span class="pill">Boiling &amp; Condensation</span>
+      <span class="pill">LabVIEW</span>
+    </div>
+  </div>
+</section>
 
-      <section id="evidence" class="section">
-        <h2>Research Contributions</h2>
+<section id="evidence" class="section">
+  <div class="section-inner">
+    <h2>Research Contributions</h2>
+    <p class="small-muted">
+      Contributor on research and development activities associated with the following programs and collaborations.
+    </p>
+    <div class="grid">
+      <div class="card span-4">
+        <h3>DARPA SBIR Phase II</h3>
+        <p>Contributor on two-phase cooling systems.</p>
+      </div>
+
+      <div class="card span-4">
+        <h3>NSF SBIR Phase II</h3>
+        <p>Contributor on pulsating heat pipe cooling systems.</p>
+      </div>
+
+      <div class="card span-4">
+        <h3>NSF STTR Phase I</h3>
+        <p>Contributor on two-phase cooling technologies.</p>
+      </div>
+
+      <div class="card span-4">
+        <h3>NASA Early Stage Innovations</h3>
+        <p>Contributor on additively manufactured heat pipe radiators.</p>
+      </div>
+
+      <div class="card span-4">
+        <h3>Global Health Labs</h3>
+        <p>Thermal modeling and validation for diagnostic platform development.</p>
+      </div>
+
+      <div class="card span-4">
+        <h3>QuantumAtmos</h3>
+        <p>Prototype development and commercialization efforts for atmospheric water harvesting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <h2>Selected Highlights</h2>
+    <div class="grid">
+      <div class="card span-4">
+        <h3>Innovation</h3>
+        <p>Patent-pending atmospheric water harvesting technology and prototype development.</p>
+      </div>
+
+      <div class="card span-4">
+        <h3>Scholarly activity</h3>
+        <p>Peer-reviewed publications and conference presentations in thermal-fluid engineering.</p>
+      </div>
+
+      <div class="card span-4">
+        <h3>Service</h3>
+        <p>Completed peer reviews for ASME, IEEE, Elsevier, and ITherm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <div class="section-inner">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div><span class="time">2025</span></div>
+        <div><h3>PhD, Mechanical Engineering — Arizona State University</h3></div>
+      </div>
+
+      <div class="timeline-item">
+        <div><span class="time">2018</span></div>
+        <div><h3>MS, Mechanical Engineering — Arizona State University</h3></div>
+      </div>
+
+      <div class="timeline-item">
+        <div><span class="time">2016</span></div>
+        <div><h3>B.Tech, Mechanical Engineering — Indian Institute of Technology Madras</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="section-inner">
+    <h2>Contact</h2>
+    <div class="grid">
+      <div class="card span-4">
+        <h3>Email</h3>
+        <p><a href="mailto:gchandr8@asu.edu">gchandr8@asu.edu</a></p>
+      </div>
+
+      <div class="card span-4">
+        <h3>LinkedIn</h3>
+        <p><a href="https://linkedin.com/in/gokul-chandrasekaran" target="_blank" rel="noreferrer">Profile</a></p>
+      </div>
+
+      <div class="card span-4">
+        <h3>Google Scholar</h3>
+        <p><a href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Profile</a></p>
+      </div>
+
+      <div class="card span-4">
+        <h3>CV / Resume</h3>
+        <p><a href="Resume_GC.pdf" target="_blank" rel="noreferrer">Download PDF</a></p>
+      </div>
+
+      <div class="card span-8">
+        <h3>Keywords</h3>
         <p class="small-muted">
-          Contributor on research and development activities associated with the following programs and collaborations.
+          Electronics Cooling • Thermal Management • Atmospheric Water Harvesting • Heat Pipes • Thermal Modeling • COMSOL • MATLAB • LabVIEW
         </p>
-        <div class="grid">
-          <div class="card span-4">
-            <h3>DARPA SBIR Phase II</h3>
-            <p>Contributor on two-phase cooling systems.</p>
-          </div>
+      </div>
+    </div>
 
-          <div class="card span-4">
-            <h3>NSF SBIR Phase II</h3>
-            <p>Contributor on pulsating heat pipe cooling systems.</p>
-          </div>
-
-          <div class="card span-4">
-            <h3>NSF STTR Phase I</h3>
-            <p>Contributor on two-phase cooling technologies.</p>
-          </div>
-
-          <div class="card span-4">
-            <h3>NASA Early Stage Innovations</h3>
-            <p>Contributor on additively manufactured heat pipe radiators.</p>
-          </div>
-
-          <div class="card span-4">
-            <h3>Global Health Labs</h3>
-            <p>Thermal modeling and validation for diagnostic platform development.</p>
-          </div>
-
-          <div class="card span-4">
-            <h3>QuantumAtmos</h3>
-            <p>Prototype development and commercialization efforts for atmospheric water harvesting.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Selected Highlights</h2>
-        <div class="grid">
-          <div class="card span-4">
-            <h3>Innovation</h3>
-            <p>Patent-pending atmospheric water harvesting technology and prototype development.</p>
-          </div>
-
-          <div class="card span-4">
-            <h3>Scholarly activity</h3>
-            <p>Peer-reviewed publications and conference presentations in thermal-fluid engineering.</p>
-          </div>
-
-          <div class="card span-4">
-            <h3>Service</h3>
-            <p>Completed peer reviews for ASME, IEEE, Elsevier, and ITherm.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="education" class="section">
-        <h2>Education</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div><span class="time">2025</span></div>
-            <div><h3>PhD, Mechanical Engineering — Arizona State University</h3></div>
-          </div>
-
-          <div class="timeline-item">
-            <div><span class="time">2018</span></div>
-            <div><h3>MS, Mechanical Engineering — Arizona State University</h3></div>
-          </div>
-
-          <div class="timeline-item">
-            <div><span class="time">2016</span></div>
-            <div><h3>B.Tech, Mechanical Engineering — Indian Institute of Technology Madras</h3></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <div class="grid">
-          <div class="card span-4">
-            <h3>Email</h3>
-            <p><a href="mailto:gchandr8@asu.edu">gchandr8@asu.edu</a></p>
-          </div>
-
-          <div class="card span-4">
-            <h3>LinkedIn</h3>
-            <p><a href="https://linkedin.com/in/gokul-chandrasekaran" target="_blank" rel="noreferrer">Profile</a></p>
-          </div>
-
-          <div class="card span-4">
-            <h3>Google Scholar</h3>
-            <p><a href="https://scholar.google.com/citations?user=dBxdefsAAAAJ" target="_blank" rel="noreferrer">Profile</a></p>
-          </div>
-
-          <div class="card span-4">
-            <h3>CV / Resume</h3>
-            <p><a href="Resume_GC.pdf" target="_blank" rel="noreferrer">Download PDF</a></p>
-          </div>
-
-          <div class="card span-8">
-            <h3>Keywords</h3>
-            <p class="small-muted">
-              Electronics Cooling • Thermal Management • Atmospheric Water Harvesting • Heat Pipes • Thermal Modeling • COMSOL • MATLAB • LabVIEW
-            </p>
-          </div>
-        </div>
-
-        <div class="footer-note">
-          Research overview and technical profile.
-        </div>
-      </section>
+    <div class="footer-note">
+      Research overview and technical profile.
+    </div>
+  </div>
+</section>
     </div>
   </main>
 </body>
