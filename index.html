@@ -40,6 +40,7 @@
       <div class="stat"><span class="stat-num">4</span><span class="stat-label">peer-reviewed papers</span></div>
       <div class="stat"><span class="stat-num">13+</span><span class="stat-label">peer reviews</span></div>
       <div class="stat"><span class="stat-num">1</span><span class="stat-label">patent filing</span></div>
+      <div class="stat"><span class="stat-num" id="citation-count">&mdash;</span><span class="stat-label">citations <span class="stat-sub">(OpenAlex, updated daily)</span></span></div>
     </div>
 
     <div class="hero-links">
@@ -295,6 +296,17 @@
 <footer class="site-footer">
   <p>Tempe, AZ &middot; Updated 2026</p>
 </footer>
+
+<script>
+  fetch('data/citations.json')
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (typeof data.citations === 'number') {
+        document.getElementById('citation-count').textContent = data.citations;
+      }
+    })
+    .catch(function () { /* leave the placeholder in place */ });
+</script>
 
 </body>
 </html>
