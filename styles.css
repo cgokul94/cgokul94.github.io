@@ -118,24 +118,6 @@ a:focus-visible, button:focus-visible {
   padding: 110px 40px 70px;
   text-align: left;
 }
-.hero-schematic {
-  position: absolute;
-  top: 30px;
-  right: -20px;
-  width: 46%;
-  max-width: 460px;
-  height: auto;
-  color: var(--muted);
-  opacity: 0.55;
-  z-index: -1;
-}
-.hero-schematic circle { color: var(--accent); }
-.schem-label {
-  font-family: var(--mono);
-  font-size: 9px;
-  fill: var(--muted);
-  letter-spacing: 0.08em;
-}
 .eyebrow {
   font-family: var(--mono);
   color: var(--accent);
@@ -194,7 +176,6 @@ a:focus-visible, button:focus-visible {
 
 @media (max-width: 720px) {
   .hero { padding: 90px 20px 50px; }
-  .hero-schematic { display: none; }
   .stat { padding-right: 16px; margin-right: 16px; }
 }
 
