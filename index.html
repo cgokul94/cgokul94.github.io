@@ -40,7 +40,6 @@
       <div class="stat"><span class="stat-num">4</span><span class="stat-label">peer-reviewed papers</span></div>
       <div class="stat"><span class="stat-num">13+</span><span class="stat-label">peer reviews</span></div>
       <div class="stat"><span class="stat-num">1</span><span class="stat-label">patent filing</span></div>
-      <div class="stat"><span class="stat-num" id="citation-count">&mdash;</span><span class="stat-label">citations <span class="stat-sub">(OpenAlex, updated daily)</span></span></div>
     </div>
 
     <div class="hero-links">
@@ -270,7 +269,7 @@
   <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <h2><span class="sec-eyebrow">05</span> Contact</h2>
-    <p class="contact-lede">Open to principal-level thermal engineering roles and technical collaborations in two-phase cooling, electronics thermal management, and atmospheric water harvesting.</p>
+    <p class="contact-lede">Open to technical collaborations in two-phase cooling, electronics thermal management, and atmospheric water harvesting.</p>
     <div class="contact-grid">
       <a href="mailto:gchandr8@asu.edu" class="contact-item">
         <span class="contact-label">Email</span>
@@ -296,17 +295,6 @@
 <footer class="site-footer">
   <p>Tempe, AZ &middot; Updated 2026</p>
 </footer>
-
-<script>
-  fetch('data/citations.json')
-    .then(function (res) { return res.json(); })
-    .then(function (data) {
-      if (typeof data.citations === 'number') {
-        document.getElementById('citation-count').textContent = data.citations;
-      }
-    })
-    .catch(function () { /* leave the placeholder in place */ });
-</script>
 
 </body>
 </html>
