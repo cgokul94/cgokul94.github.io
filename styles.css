@@ -300,6 +300,33 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ===== Publications ===== */
+.pub-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; }
+.pub-filter-btn {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.pub-filter-btn:hover { border-color: var(--accent-dim); color: var(--text); }
+.pub-filter-btn.is-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(87, 214, 196, 0.1);
+}
+.pub-empty { color: var(--muted); font-size: 0.92rem; padding: 20px 0; }
+.pub-type {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 6px;
+}
 .pub-list { list-style: none; margin: 0; padding: 0; }
 .pub-list li {
   padding: 20px 0;
