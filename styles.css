@@ -302,6 +302,10 @@ a:focus-visible, button:focus-visible {
 /* ===== Publications ===== */
 .pub-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; }
 .pub-filter-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font: inherit;
   font-family: var(--mono);
   font-size: 0.78rem;
   color: var(--muted);
@@ -338,7 +342,7 @@ a:focus-visible, button:focus-visible {
   font-family: var(--mono);
   color: var(--accent);
   font-size: 0.9rem;
-  padding-top: 3px;
+  padding-top: 1px;
 }
 .pub-title {
   font-family: var(--display);
