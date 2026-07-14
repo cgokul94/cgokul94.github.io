@@ -321,12 +321,6 @@ a:focus-visible, button:focus-visible {
 }
 .pub-meta { margin: 0 0 6px; color: var(--muted); font-size: 0.9rem; }
 .pub-meta strong { color: var(--text); }
-.pub-contrib {
-  margin: 0;
-  font-size: 0.86rem;
-  color: var(--accent-dim);
-  font-style: italic;
-}
 .ip-note {
   margin-top: 30px;
   padding: 18px 22px;
